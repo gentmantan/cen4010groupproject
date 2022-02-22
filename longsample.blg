@@ -1,0 +1,9 @@
+[0] Config.pm:304> INFO - This is Biber 2.14
+[0] Config.pm:307> INFO - Logfile is 'longsample.blg'
+[88] biber:322> INFO - === Mon Feb 21, 2022, 22:43:55
+[107] Biber.pm:415> INFO - Reading 'longsample.bcf'
+[186] Biber.pm:943> INFO - Found 0 citekeys in bib section 0
+[192] Utils.pm:304> WARN - The file 'longsample.bcf' does not contain any citations!
+[201] bbl.pm:652> INFO - Writing 'longsample.bbl' with encoding 'UTF-8'
+[201] bbl.pm:755> INFO - Output to longsample.bbl
+[201] Biber.pm:128> INFO - WARNINGS: 1
