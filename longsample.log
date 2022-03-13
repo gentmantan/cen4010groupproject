@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.13)  12 MAR 2022 21:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.13)  12 MAR 2022 22:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1236,31 +1236,35 @@ Underfull \vbox (badness 10000) detected at line 119
  []
 
 [4]
-Underfull \vbox (badness 10000) detected at line 185
+Underfull \vbox (badness 10000) detected at line 186
  []
 
-[5] [6] [7] AED endfloat: Processing end Figures and Tables [8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 187.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 187.
+[5] [6] [7]
+Underfull \vbox (badness 10000) detected at line 254
+ []
 
-(./longsample.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 187.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 187.
+[8] AED endfloat: Processing end Figures and Tables [9]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 258.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 258.
+ (./longsample.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 258.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 258.
 Package rerunfilecheck Info: File `longsample.out' has not changed.
 (rerunfilecheck)             Checksum: 99F0B3D3A0E0B696A48094521D09D4CE;490.
 Package logreq Info: Writing requests to 'longsample.run.xml'.
 \openout1 = `longsample.run.xml'.
 
  )
-(\end occurred inside a group at level 1)
+(\end occurred inside a group at level 2)
 
+### simple group (level 2) entered at line 190 ({)
 ### simple group (level 1) entered at line 121 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 28086 strings out of 482555
- 536523 string characters out of 5952145
- 1413300 words of memory out of 5000000
- 43174 multiletter control sequences out of 15000+600000
+ 28098 strings out of 482555
+ 536605 string characters out of 5952145
+ 1414336 words of memory out of 5000000
+ 43175 multiletter control sequences out of 15000+600000
  571366 words of font info for 55 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  68i,11n,68p,1455b,4915s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1270,10 +1274,10 @@ exmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/texlive/texmf-dist/fonts
 /type1/public/lm/lmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/l
 m/lmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on longsample.pdf (8 pages, 108868 bytes).
+Output written on longsample.pdf (9 pages, 113096 bytes).
 PDF statistics:
- 132 PDF objects out of 1000 (max. 8388607)
- 116 compressed objects within 2 object streams
- 40 named destinations out of 1000 (max. 500000)
+ 148 PDF objects out of 1000 (max. 8388607)
+ 131 compressed objects within 2 object streams
+ 51 named destinations out of 1000 (max. 500000)
  69 words of extra memory for PDF output out of 10000 (max. 10000000)
 

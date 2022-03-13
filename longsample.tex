@@ -119,18 +119,26 @@ The project will consist of two types of coding assignments, one for frontend de
 \end{xltabular}
 
 \scriptsize{\begin{xltabular}{\textwidth}{|l|X|}
-
   \hline Use Case ID: & UC-1-AA \\ \hline
+
   Use Case Name: & Add account \\ \hline
+
   Created By: Rey Jairus Marasigan & Last Updated By: Rey Jairus Marasigan \\ \hline
+
   Date Created: February 21, 2022 & Last Revision Date: February 21, 2022 \\ \hline
+
   Actors: & \nextitem User \\ \hline
+
   Description: &  This use case is used for specifying the different elements of our system that the DeviceUser goes through to add an entry to a list of account entries within our app. The ideal outcome of this use case is that the account is added to the database without any adverse effects. \\ \hline
+
   Trigger: & The user presses the plus icon on the top right of the UI. \\ \hline
+
   Preconditions: & \nextitem The User has created a database \nextitem The User has opened the app and unlocked their database \nextitem The User is in the correct directory to be able to see and touch the plus icon. \\ \hline
+
   Postconditions: & \nextitem At minimum: the system retains consistency and integrity in case of an error or deviation from the flow of events i.e. the user can “add account” again without repercussions from previous try.
     \nextitem Everything in harmony and works without error: Account is added to the database.
     \nextitem The account added can be accessed after being saved to the database. \\ \hline
+
   Normal Flow: & 
   (assumes the user wants to generate password when adding the account)
   \begin{enumerate}
@@ -149,6 +157,7 @@ The project will consist of two types of coding assignments, one for frontend de
   \item A notification pops up that lets the user know that the account has been added.
   \item The state of the app then returns to its default view.
   \end{enumerate} \\ \hline
+
  Alternative Flows: & \nextitemblank 2b. In step 2 of the normal flow, if the user chooses to manually enter the password rather than generate a new password,
    \begin{enumerate}
      \item The entire normal flow can skip to step 9
@@ -167,17 +176,24 @@ The project will consist of two types of coding assignments, one for frontend de
      \item The keyboard pops up automatically
      \item Once the fields are filled, the use case enters step 8 of the normal flow.
      \end{enumerate} \\ \hline
+
    Exceptions: & Exceptions to adding account to list
      \nextitemblank 9b. In step 9 of the normal flow, if the user does not enter a website or username. \\ \hline
+
    Includes: & editAccount- steps 3 to 7 would be required to edit an entry within the list and can be separated in its own use case \\ \hline
+
    Frequency of Use: & On-demand\\ \hline
+
    Special Requirements: & \nextitem Users should not wait >20 seconds for an action to be performed
      \nextitem Animations should last <250ms
      \nextitem Colors should be made to be accessible to colorblind
      \nextitem Application should be made available on all major mobile platforms \\ \hline
+
+
    Assumptions: & \nextitem The Customer has installed and is using the application
      \nextitem The application is readable to the Customer
      \nextitem The client has the ability to use the keyboard and interact with the screen. \\ \hline
+
    Notes and Issues: & \nextitem Is the minimum and maximum possible length of the password generator feasible for the users?
      \nextitem Should there be a limit to the amount of accounts added to the list?
      \nextitem What are the different switches that we can include in the forum?
@@ -189,50 +205,68 @@ The project will consist of two types of coding assignments, one for frontend de
 
 \scriptsize{\begin{xltabular}{\textwidth}{|l|X|}
   \hline Use Case ID: & UC-2-AB \\ \hline
+
   Use Case Name: & Login to Database \\ \hline
+
   Created By: Sonali Benni & Last Updated By: Sonali Benni \\ \hline
+
   Date Created: February 22, 2022 & Last Revision Date: February 22, 2022 \\ \hline
+
   Actors: & \nextitem DeviceUser \\ \hline
+  
   Description: & This use case is for logging into the app to access passwords. Ideally, the actor would have the app on their phone. They would log into the app and have access to their home screen/ main menu. \\ \hline
+
   Trigger: & The DeviceUser clicks on the app on their personal device. \\ \hline
+
   Preconditions: & \nextitem The DeviceUser is logged in on their personal device such as a cellphone where the app is located. \nextitem The DeviceUser opens the app \\ \hline
+
   Postconditions: & \nextitem The DeviceUser is able to get into the app and is brought to a screen that allows them to enter login information.
-    \nextitem The DeviceUser has successfully entered their information and is brought to a screen that shows their home screen. 
+    \nextitem The DeviceUser has successfully entered their information and is brought to a screen that shows their home screen.  \\ \hline
+
   Normal Flow: & 
-   Alternative Flows: & \nextitemblank 2b. In step 2 of the normal flow, if the user chooses to manually enter the password rather than generate a new password,
+    \begin{itemize}
+      \item The user turns on their personal device and is logged in. 
+      \item The user then locates the app on their device. 
+      \item The user clicks on the app.
+      \item The app then opens and displays a login screen.
+      \item The user then enters a username and password into the app.
+      \item The information is successfully processed and the user can see their home screen.
+      \item From this point, the user is free to update, add, or delete any accounts.
+    \end{itemize} \\ \hline
+
+  Alternative Flows: & \nextitemblank 6a. In step 6 of the normal flow, the login information is not successfully processed and the user can’t see their home screen.
    \begin{enumerate}
-     \item The entire normal flow can skip to step 9
-   \end{enumerate}
-   \nextitemblank 7b. In step 7 of the normal flow, if the user changes the generated password and then slides the password slider,
-   \begin{enumerate}
-     \item An entirely different password is generated.
-     \item The new password is instantly displayed within the text box.
-     \item The normal use case continues thereafter on step 7 where the user can edit the newly generated password.
-   \end{enumerate}
-   \nextitemblank 9b. In step 9 of the normal flow, if the website field and username field is not filled
-     \begin{enumerate}
-     \item A notification pops up to let the user know about the required fields
-     \item The app is scrolled the field needed to be filled
-     \item The fields are highlighted red to indicate requirement. 
-     \item The keyboard pops up automatically
-     \item Once the fields are filled, the use case enters step 8 of the normal flow.
-     \end{enumerate} \\ \hline
-   Exceptions: & Exceptions to adding account to list
-     \nextitemblank 9b. In step 9 of the normal flow, if the user does not enter a website or username. \\ \hline
-   Includes: & editAccount- steps 3 to 7 would be required to edit an entry within the list and can be separated in its own use case \\ \hline
-   Frequency of Use: & On-demand\\ \hline
-   Special Requirements: & \nextitem Users should not wait >20 seconds for an action to be performed
-     \nextitem Animations should last <250ms
-     \nextitem Colors should be made to be accessible to colorblind
-     \nextitem Application should be made available on all major mobile platforms \\ \hline
-   Assumptions: & \nextitem The Customer has installed and is using the application
-     \nextitem The application is readable to the Customer
-     \nextitem The client has the ability to use the keyboard and interact with the screen. \\ \hline
-   Notes and Issues: & \nextitem Is the minimum and maximum possible length of the password generator feasible for the users?
-     \nextitem Should there be a limit to the amount of accounts added to the list?
-     \nextitem What are the different switches that we can include in the forum?
-     \nextitem should the app request for the master password (the password required to enter the app)or other biometrics for the ability to add an entry to the list?
-     \nextitem Should we use other characters outside of the printable ascii characters? \\ \hline
+      \item The app will prompt the user with an error, try again message 
+      \item Once the information is correct and processed, the user is able to log in
+      \item Use Case resumes on step 6
+    \end{enumerate}
+    \nextitemblank 7a. Once the user is successfully in the app, if the personal device were to turn off/shut down/force closed:
+    \begin{enumerate}
+      \item The user would be automatically signed out of the app.
+      \item Use Case resumes on step 4 
+   \end{enumerate} \\ \hline
+  
+  Exceptions: & \nextitemblank 4a. In step 4 of the normal flow, the login screen is not displaying 
+    \begin{enumerate}
+      \item If the app is down for maintenance or needs to be updated, a message will be displayed when the app is clicked on.
+    \end{enumerate} 
+  \nextitemblank 5a. The user forgets their password 
+    \begin{enumerate}
+      \item The user hits forget password
+      \item Then a recovery key could be entered or security questions could be answered to login
+      \item User is prompted to create a new password 
+    \end{enumerate} \\ \hline
+
+  Includes: &  Included in any Login use case scenarios \\ \hline
+
+  Frequency of Use: & On-demand: Depends on how many accounts the user needs to login into on that particular day. This use case will most likely be used multiple times a day. \\ \hline
+
+  Special Requirements: & The app should be organized and users should be able to quickly find what they are looking for. Color themes matter, color affects readability. \\ \hline
+
+  Assumptions: & \nextitem The user understands English and knows their username and password for the app. \\ \hline
+
+  Notes and Issues: & \nextitem Should the app have the ability to use Face ID or any other form of biometric authentication? \\ \hline
+
 \end{xltabular}
 
 
