@@ -184,7 +184,7 @@ The project will consist of two types of coding assignments, one for frontend de
      \nextitem What are the different switches that we can include in the forum?
      \nextitem should the app request for the master password (the password required to enter the app)or other biometrics for the ability to add an entry to the list?
      \nextitem Should we use other characters outside of the printable ascii characters? \\ \hline
-\end{xltabular}
+\end{xltabular}}
 
 
 
@@ -252,7 +252,7 @@ The project will consist of two types of coding assignments, one for frontend de
 
   Notes and Issues: & \nextitem Should the app have the ability to use Face ID or any other form of biometric authentication? \\ \hline
 
-\end{xltabular}
+\end{xltabular}}
 
 \scriptsize{\begin{xltabular}{\textwidth}{|l|X|}
   \hline Use Case ID: & UC-2-AB \\ \hline
@@ -309,9 +309,166 @@ The project will consist of two types of coding assignments, one for frontend de
 
   Notes and Issues: & \nextitem Should the user have the ability to pair multiple different PassUSB dongles simultaneously? \\ \hline
 
-\end{xltabular}
+\end{xltabular}}
 
-\end{document}}
+\scriptsize{\begin{xltabular}{\textwidth}{|l|X|}
+  \hline Use Case ID: & UC-3-AC \\ \hline
+
+  Use Case Name: & Generate Password \\ \hline
+
+  Created By: Kaiya Roberts & Last Updated By: Kaiya Roberts \\ \hline
+
+  Date Created: February 22, 2022 & Last Revision Date: February 22, 2022 \\ \hline
+
+  Actors: & \nextitem DeviceUser \\ \hline
+  
+  Description: &  The reason behind this use case is to prevent the user from having to re use the same password or a variation of one combination of password. The ideal outcome of this use case will be the creation of a unique password with the requested character amount, letter amount, number amount, and special character amount. \\ \hline
+
+  Trigger: & The user clicks on the create new password button on their personal device \\ \hline
+
+  Preconditions: & \nextitem The DeviceUser is logged in on their personal device such as a cellphone where the app is located \nextitem The DeviceUser has the app opened \nextitem The DeviceUser has created a database \nextitem The DeviceUser has logged into a database \\ \hline
+
+  Postconditions: & \nextitem The account holder has decided to not generate a password, but include their own password instead. Their own password will be stored in the account, and the account holder will be alerted that their password was stored \nextitem The password is generated with the conditions specifed by the accountHolder, and the accountHolder will be notified that the password was successfully created and it is stored into the system.  \\ \hline
+
+  Normal Flow: & 
+    \begin{enumerate}
+      \item The user has added the desired account that they would like to generate a password for (mentioned in the Add Account use case).
+      \item The user has pressed the create a password button for the desired account. 
+      \item The user device switches to a view where they have the option to click an eye icon that will show the password as it generates. 
+      \item On the same view mentioned above the user has the option to choose between certain parameters that they can adjust based on the parameters of the password they would like to generate.
+      \item The user clicks the parameter they would like to add to the password. The examples are provided below. 
+        \begin{itemize}
+          \item length of password
+          \item upperCase letters 
+          \item lowerCase letters
+          \item digits
+          \item Minus
+          \item underscore
+          \item space
+          \item special characters
+          \item bracket variations 
+        \end{itemize}
+    \item The user adjusts the desired length of password by moving the slider icon to their desired amount. 
+      \begin{itemize}
+          \item The slider starts at 12 characters and it can be adjusted to another number.
+          \item The maximum number of characters in the password is 32. 
+          \item When the slider is moved towards the right it increases the desired number
+          \item When the slider moves towards the left it decreases the desired number
+      \end{itemize}
+    \item As the parameters are updated, the user will see the changes in the password box where the new password will be generated.
+    \item The user updates the password with the desired parameters and has created a final password
+    \item The user presses save password
+    \item The password is saved into the application's database
+    \end{enumerate} \\ \hline
+
+  Alternative Flows: & \nextitem At any time, the user can cancel the Generate Password dialog box and exit the Generate Password use case \\ \hline
+
+  Exceptions: & N/A \\ \hline
+
+  Includes: & N/A \\ \hline
+
+  Frequency of Use: & On-demand \\ \hline
+
+  Special Requirements: & \nextitem Options chosen should reflect immediately in the password (the DeviceUser should not need to wait >500ms for a password to be generated) \\ \hline
+
+  Assumptions: & \nextitem The DeviceUser understands English and knows their username and password for the app \nextitem The DeviceUser is logged into a database \nextitem The DeviceUser has elected to either add a new account entry or edit an existing account entry \\ \hline
+
+  Notes and Issues: & \nextitem Which kinds of cryptographic algorithms should be used in the process of password generation? \nextitem Should passwords be shown in plaintext to the DeviceUser by default? \\ \hline
+
+\end{xltabular}}
+
+\scriptsize{\begin{xltabular}{\textwidth}{|l|X|}
+  \hline Use Case ID: & UC-5-AC \\ \hline
+
+  Use Case Name: & Delete Account \\ \hline
+
+  Created By: Chidiebere Otuonye & Last Updated By: Chidiebere Otuonye \\ \hline
+
+  Date Created: February 21, 2022 & Last Revision Date: February 22, 2022 \\ \hline
+
+  Actors: & \nextitem DeviceUser \\ \hline
+  
+  Description: & This use case is for outlining the behavior of DeviceUser when they’re deleting an account from the USB dongle, via the app.\\ \hline
+
+  Trigger: & The user presses the “edit” button. \\ \hline
+
+  Preconditions: & \nextitem The DeviceUser is logged in on their personal device such as a cellphone where the app is located \nextitem The DeviceUser has the app opened \nextitem The DeviceUser has created a database \nextitem The DeviceUser has logged into a database \\ \hline
+
+  Postconditions: & \nextitem The system retains all data from accounts that user intends to keep and integrity of control flow is preserved \nextitem The correct account is deleted and the other accounts are preserved, control flow is preserved and the user can execute other actions and navigate to other parts of app  \\ \hline
+
+  Normal Flow: & 
+    \begin{enumerate}
+      \item The accountHolder presses the 'edit' icon.
+      \item Selection bubbles appear next to all accounts.
+      \item The accountholder can select multiple accounts or just 1.
+      \item The accountholder selects the trash icon in the top right-hand corner.
+      \item A dialogue box pops up asking if user is sure they want to delete selected accounts.
+      \item App authenticates identity before deleting account.
+    \end{enumerate} \\ \hline
+
+  Alternative Flows: & 
+    \nextitemblank 3a. In step 3 the user decides not to delete any accounts after pressing 'edit'.
+1.     User selects 'cancel' in top left-hand corner where the 'edit' button previously was.
+
+2.     Selection bubbles disappear from next to account fields.
+
+3b. In step 3 the user decides not to delete any accounts after pressing 'edit' and selecting account(s).
+
+1.     User selects 'cancel' in top left-hand corner where the 'edit' button previously was.
+
+2.     Selection bubbles disappear from next to account fields.
+
+3c. In step 3 the user decides to delete all accounts after pressing 'edit' button.
+
+1.     User presses the 'select all' button.
+
+2.     User presses the trash icon.
+
+3.     User is prompted to confirm if they're sure they want to delete 'ALL accounts'.
+
+4.     User is prompted to authenticate using physical password.
+
+5.     User is then prompted once more if they'd like to delete 'ALL accounts as the action is irreversible'
+
+6.     User selects 'delete' and all accounts are deleted.
+
+5a. In step 5 user decides not to delete accounts after selecting the trash icon.
+
+1.     User selects the 'Never mind' option when presented with the options to delete or not delete selected accounts.
+
+	Exceptions:
+
+	Exceptions to the Delete Account(s) use case
+
+6a. In step 6 user isn't able or chooses not to authenticate their identity to complete deletion process.
+
+1.     User fails authentication and is prompted to authenticate biometrically 2 additional times.
+
+2.     User is then asked to enter physical password.
+
+3.     User enters physical password incorrectly 3 times and is locked out of account for 30 minutes.
+
+4.     User enters physical password incorrectly 1 more time and is locked out for 45 minutes.
+
+5.     User enters physical password incorrectly 1 more time and is locked out for 1 hour.
+
+6.     User enters physical password incorrectly 1 more time and is locked out permanently until they recover account. \\ \hline
+
+  Exceptions: & N/A \\ \hline
+
+  Includes: & N/A \\ \hline
+
+  Frequency of Use: & On-demand \\ \hline
+
+  Special Requirements: & \nextitem Options chosen should reflect immediately in the password (the DeviceUser should not need to wait >500ms for a password to be generated) \\ \hline
+
+  Assumptions: & \nextitem The DeviceUser understands English and knows their username and password for the app \nextitem The DeviceUser is logged into a database \nextitem The DeviceUser has elected to either add a new account entry or edit an existing account entry \\ \hline
+
+  Notes and Issues: & \nextitem Which kinds of cryptographic algorithms should be used in the process of password generation? \nextitem Should passwords be shown in plaintext to the DeviceUser by default? \\ \hline
+
+\end{xltabular}}
+
+\end{document}
 %% 
 %% Copyright (C) 2021 by Daniel A. Weiss <daniel.weiss.led at gmail.com>
 %% 
