@@ -43,6 +43,8 @@
 \usepackage{tabularx}
 \usepackage{xltabular}
 
+\usepackage{enumitem}
+
 \usepackage{lipsum}
 
 \newenvironment{enumnumbers}
@@ -63,8 +65,6 @@
 \professor{Kianoosh G. Boroojeni}
 \duedate{March 11, 2022}
 
-\abstract{}
-
 \begin{document}
 \maketitle
 
@@ -76,7 +76,7 @@ With the prevalence of information technologies, there exists an ever-increasing
 Solve the security issues facing PC end users in the realm of password authentication
 
 \subsection{Scope of the system}
-In scope: Multi-platform mobile application, password management, multi-plaform USB keyboard emulation, mitigations against man-in-the-middle, replay and spoofing attacks
+In scope: Multi-platform mobile application, password management, multi-platform USB keyboard emulation, mitigation against man-in-the-middle, replay and spoofing attacks
 Out of scope: Application data security, side-channel attacks
 
 \subsection{Objectives and success criteria of the project}
@@ -331,7 +331,7 @@ The project will consist of two types of coding assignments, one for frontend de
   Postconditions: & \nextitem The account holder has decided to not generate a password, but include their own password instead. Their own password will be stored in the account, and the account holder will be alerted that their password was stored \nextitem The password is generated with the conditions specifed by the accountHolder, and the accountHolder will be notified that the password was successfully created and it is stored into the system.  \\ \hline
 
   Normal Flow: & 
-    \begin{enumerate}
+    \begin{enumerate}[nosep,after=\strut]
       \item The user has added the desired account that they would like to generate a password for (mentioned in the Add Account use case).
       \item The user has pressed the create a password button for the desired account. 
       \item The user device switches to a view where they have the option to click an eye icon that will show the password as it generates. 
@@ -408,63 +408,48 @@ The project will consist of two types of coding assignments, one for frontend de
 
   Alternative Flows: & 
     \nextitemblank 3a. In step 3 the user decides not to delete any accounts after pressing 'edit'.
-1.     User selects 'cancel' in top left-hand corner where the 'edit' button previously was.
+      \begin{enumerate}
+        \item User selects 'cancel' in top left-hand corner where the 'edit' button previously was.
+        \item Selection bubbles disappear from next to account fields.
+      \end{enumerate}
+    \nextitemblank 3b. In step 3 the user decides not to delete any accounts after pressing 'edit' and selecting account(s).  
+      \begin{enumerate}
+        \item User selects 'cancel' in top left-hand corner where the 'edit' button previously was.
+        \item Selection bubbles disappear from next to account fields.
+      \end{enumerate}
+    \nextitemblank 3c. In step 3 the user decides to delete all accounts after pressing 'edit' button.
+      \begin{enumerate}
+        \item User presses the 'select all' button.
+        \item User presses the trash icon.
+        \item User is prompted to confirm if they're sure they want to delete 'ALL accounts'.
+        \item User is prompted to authenticate using physical password.
+        \item User is then prompted once more if they'd like to delete 'ALL accounts as the action is irreversible'
+        \item User selects 'delete' and all accounts are deleted.
+      \end{enumerate}
+    \nextitemblank 5a. In step 5 user decides not to delete accounts after selecting the trash icon.
+      \begin{enumerate}
+        \item User selects the 'Never mind' option when presented with the options to delete or not delete selected accounts. 
+      \end{enumerate} \\ \hline
 
-2.     Selection bubbles disappear from next to account fields.
-
-3b. In step 3 the user decides not to delete any accounts after pressing 'edit' and selecting account(s).
-
-1.     User selects 'cancel' in top left-hand corner where the 'edit' button previously was.
-
-2.     Selection bubbles disappear from next to account fields.
-
-3c. In step 3 the user decides to delete all accounts after pressing 'edit' button.
-
-1.     User presses the 'select all' button.
-
-2.     User presses the trash icon.
-
-3.     User is prompted to confirm if they're sure they want to delete 'ALL accounts'.
-
-4.     User is prompted to authenticate using physical password.
-
-5.     User is then prompted once more if they'd like to delete 'ALL accounts as the action is irreversible'
-
-6.     User selects 'delete' and all accounts are deleted.
-
-5a. In step 5 user decides not to delete accounts after selecting the trash icon.
-
-1.     User selects the 'Never mind' option when presented with the options to delete or not delete selected accounts.
-
-	Exceptions:
-
-	Exceptions to the Delete Account(s) use case
-
-6a. In step 6 user isn't able or chooses not to authenticate their identity to complete deletion process.
-
-1.     User fails authentication and is prompted to authenticate biometrically 2 additional times.
-
-2.     User is then asked to enter physical password.
-
-3.     User enters physical password incorrectly 3 times and is locked out of account for 30 minutes.
-
-4.     User enters physical password incorrectly 1 more time and is locked out for 45 minutes.
-
-5.     User enters physical password incorrectly 1 more time and is locked out for 1 hour.
-
-6.     User enters physical password incorrectly 1 more time and is locked out permanently until they recover account. \\ \hline
-
-  Exceptions: & N/A \\ \hline
-
+  Exceptions: & 
+    \nextitemblank 6a. In step 6 user isn't able or chooses not to authenticate their identity to complete deletion process.
+      \begin{enumerate}
+      \item User fails authentication and is prompted to authenticate biometrically 2 additional times.
+      \item User is then asked to enter physical password.
+      \item User enters physical password incorrectly 3 times and is locked out of account for 30 minutes.
+      \item User enters physical password incorrectly 1 more time and is locked out for 45 minutes.
+      \item User enters physical password incorrectly 1 more time and is locked out for 1 hour.
+      \item User enters physical password incorrectly 1 more time and is locked out permanently until they recover account. N/A 
+      \end{enumerate} \\ \hline
   Includes: & N/A \\ \hline
 
   Frequency of Use: & On-demand \\ \hline
 
-  Special Requirements: & \nextitem Options chosen should reflect immediately in the password (the DeviceUser should not need to wait >500ms for a password to be generated) \\ \hline
+  Special Requirements: & \nextitem Customer can organize accounts with different methods to make deleting quicker. \\ \hline
 
-  Assumptions: & \nextitem The DeviceUser understands English and knows their username and password for the app \nextitem The DeviceUser is logged into a database \nextitem The DeviceUser has elected to either add a new account entry or edit an existing account entry \\ \hline
+  Assumptions: & \nextitem The user is able to use the application without issue on their device(s). \nextitem The user understands which button to choose to select and delete accounts \\ \hline
 
-  Notes and Issues: & \nextitem Which kinds of cryptographic algorithms should be used in the process of password generation? \nextitem Should passwords be shown in plaintext to the DeviceUser by default? \\ \hline
+  Notes and Issues: & \nextitem Should account objects that are to be deleted undergo lazy deletion or completely dereferenced? \\ \hline
 
 \end{xltabular}}
 
