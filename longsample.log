@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.13)  12 MAR 2022 23:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.13)  12 MAR 2022 23:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1245,28 +1245,43 @@ Underfull \vbox (badness 10000) detected at line 192
  []
 
 [4] [5] [6]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7]
 Underfull \vbox (badness 10000) detected at line 260
  []
 
-[7]
-Underfull \vbox (badness 10000) detected at line 317
+[8]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9]
+Underfull \vbox (badness 10000) detected at line 319
  []
 
-[8] [9]
-Underfull \vbox (badness 10000) detected at line 383
+[10]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11]
+Underfull \vbox (badness 10000) detected at line 387
  []
 
-[10] [11]
-Underfull \vbox (badness 10000) detected at line 459
+[12] [13]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14]
+Underfull \vbox (badness 10000) detected at line 465
  []
 
-[12] [13] [14] AED endfloat: Processing end Figures and Tables [15] [16]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 480.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 480.
+[15] [16]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-(./longsample.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 480.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 480.
+ [17]
+AED endfloat: Processing end Figures and Tables [18]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 488.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 488.
+ (./longsample.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 488.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 488.
 Package rerunfilecheck Info: File `longsample.out' has not changed.
 (rerunfilecheck)             Checksum: FA80B0B55B5A79CD6D055BA633437666;707.
 Package logreq Info: Writing requests to 'longsample.run.xml'.
@@ -1274,8 +1289,8 @@ Package logreq Info: Writing requests to 'longsample.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 28487 strings out of 482555
- 542511 string characters out of 5952145
+ 28489 strings out of 482555
+ 542525 string characters out of 5952145
  1420954 words of memory out of 5000000
  43496 multiletter control sequences out of 15000+600000
  570991 words of font info for 54 fonts, out of 8000000 for 9000
@@ -1287,10 +1302,10 @@ s/enc/dvips/lm/lm-mathsy.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/
 lm/lmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr12.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on longsample.pdf (16 pages, 128164 bytes).
+Output written on longsample.pdf (18 pages, 128804 bytes).
 PDF statistics:
- 259 PDF objects out of 1000 (max. 8388607)
- 234 compressed objects within 3 object streams
- 116 named destinations out of 1000 (max. 500000)
+ 267 PDF objects out of 1000 (max. 8388607)
+ 240 compressed objects within 3 object streams
+ 118 named destinations out of 1000 (max. 500000)
  101 words of extra memory for PDF output out of 10000 (max. 10000000)
 
