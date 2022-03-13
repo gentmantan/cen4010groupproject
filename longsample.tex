@@ -38,9 +38,20 @@
 \usepackage{csquotes}
 \usepackage[style=apa,backend=biber]{biblatex}
 
+%\usepackage{multirow}
+
+\usepackage{tabularx}
+\usepackage{xltabular}
+
+\usepackage{lipsum}
+
 \newenvironment{enumnumbers}
   {\begin{enumerate}[label=\# \arabic{*} :]}
   {\end{enumerate}}
+
+\newcommand{\nextitem}{\par\hspace*{\labelsep}\textbullet\hspace*{\labelsep}}
+\newcommand{\nextitemblank}{\par\hspace*{\labelsep}\hspace*{\labelsep}}
+
 
 \addbibresource{bibliography.bib}
 
@@ -56,6 +67,8 @@
 
 \begin{document}
 \maketitle
+
+\section{Introduction}
 
 With the prevalence of information technologies, there exists an ever-increasing need for individuals to secure one's own access to online accounts. The typical method of doing so requires the user to create a secret passphrase that they would then be responsible for memorizing in order to access a given system. However, several factors make such a task difficult and unsafe; first, the exponential rise in computational power has led to the feasibility of "brute force attacks", in turn forcing IT administrators to enforce increased password length and complexity. Another effect that the increase in password length has is making the memorization of multiple different passwords difficult, thereby incentivizing individuals to unsafely reuse their own passwords. With these shortcomings in mind, we propose a system that would solve all of these issues in a single package.
 
@@ -86,9 +99,145 @@ Out of scope: Application data security, side-channel attacks
 \subsection{Overview of document}
 The project will consist of two types of coding assignments, one for frontend development i.e. mobile app development, and the other for backend development i.e. microcontroller programming. The mobile app will prompt the user to create a new password database, in which he/she will then enter a master password that is to be used to secure the database. The user will be given an option to pair the PassUSB with the app. Should the user choose to or not choose to pair the PassUSB, the user is then able to utilize the app's password generation, management and storage features.
 
-\printbibliography
+%%Chapter 3 here 
 
-\end{document}
+\subsection{Requirements Elicitation}
+
+\begin{xltabular}{\textwidth}{|l|X|}
+
+  \hline Use Case ID: & UC-232 \\ \hline
+  Created By: Gentman Tan & Last Updated By: Gentman Tan \\ \hline
+  Actors: & \nextitem User \nextitem MobileDevice \nextitem PassUSB \\ \hline
+  Description: & Initialize a secure connection between the Owner's MobileDevice to the PassUSB for future device communication \\ \hline
+  Preconditions: & \nextitem The User has created a database \nextitem The User has opened the app and unlocked their database \nextitem The User has selected the menu option to pair a new device\\ \hline
+  Normal Flow: &
+  \nextitem User is prompted to enable Bluetooth discovery mode 
+  \nextitem Once found, the Bluetooth dongle's name and serial number is displayed
+  \nextitem User is prompted to either allow or decline the pairing process with the displayed bluetooth dongle
+  \nextitem When the "Allow" option is chosen, the MobileDevice and PassUSB is subsequently paired \\ \hline
+
+\end{xltabular}
+
+\scriptsize{\begin{xltabular}{\textwidth}{|l|X|}
+
+  \hline Use Case ID: & UC-1-AA \\ \hline
+  Use Case Name: & Add account \\ \hline
+  Created By: Rey Jairus Marasigan & Last Updated By: Rey Jairus Marasigan \\ \hline
+  Date Created: February 21, 2022 & Last Revision Date: February 21, 2022 \\ \hline
+  Actors: & \nextitem User \\ \hline
+  Description: &  This use case is used for specifying the different elements of our system that the DeviceUser goes through to add an entry to a list of account entries within our app. The ideal outcome of this use case is that the account is added to the database without any adverse effects. \\ \hline
+  Trigger: & The user presses the plus icon on the top right of the UI. \\ \hline
+  Preconditions: & \nextitem The User has created a database \nextitem The User has opened the app and unlocked their database \nextitem The User is in the correct directory to be able to see and touch the plus icon. \\ \hline
+  Postconditions: & \nextitem At minimum: the system retains consistency and integrity in case of an error or deviation from the flow of events i.e. the user can “add account” again without repercussions from previous try.
+    \nextitem Everything in harmony and works without error: Account is added to the database.
+    \nextitem The account added can be accessed after being saved to the database. \\ \hline
+  Normal Flow: & 
+  (assumes the user wants to generate password when adding the account)
+  \begin{enumerate}
+    \item The DeviceUser presses the plus icon on the top right
+    \item The view switches to a display that shows 3 text fields: a website field, a username and a password field. The first two will be required to be filled using the pop-up keyboard. The password field can either be manually filled or automatically generated using the associated button located to its left. <generate password use case>
+    \item The user presses a button that opens to another view that shows multiple fields, boxes, and sliders to be filled, checked, and adjusted, respectively, to meet a certain criteria associated with the password.
+    \item The user enters the field with a pop-up keyboard on their phone.
+    \item Below the fields, the users checks various boxes or switches that configures the password generated by the apps such as:
+      \nextitem contains special characters- an option that includes special characters in the password
+      \nextitem contains numbers- an option that includes number
+      \nextitem etc.
+  \item Below the switches, there exists a slider that controls how long the password will be. When it is adjusted towards the right, it increases the length. When it is adjusted towards the left, it decreases the length. The maximum length of the slider occupies the entire width of the screen with some deadzone. The minimum length is 8 characters and the maximum is 32 characters. Initially the slider is set to 12.
+  \item As the user changes the length of the desired password, a text box that shows the password itself changes. The password is shown in its pure form i.e. the actual password to be used. Here, the password is changeable by pressing on the box and using the pop-up keyboard. Initially, the password generated here is from the combination of the slider and checkboxes.
+  \item The user then presses the "save password" button below to generate the password. <generate password use case>
+  \item The user finally then presses the “add account” button below to add the account to the list.
+  \item A notification pops up that lets the user know that the account has been added.
+  \item The state of the app then returns to its default view.
+  \end{enumerate} \\ \hline
+ Alternative Flows: & \nextitemblank 2b. In step 2 of the normal flow, if the user chooses to manually enter the password rather than generate a new password,
+   \begin{enumerate}
+     \item The entire normal flow can skip to step 9
+   \end{enumerate}
+   \nextitemblank 7b. In step 7 of the normal flow, if the user changes the generated password and then slides the password slider,
+   \begin{enumerate}
+     \item An entirely different password is generated.
+     \item The new password is instantly displayed within the text box.
+     \item The normal use case continues thereafter on step 7 where the user can edit the newly generated password.
+   \end{enumerate}
+   \nextitemblank 9b. In step 9 of the normal flow, if the website field and username field is not filled
+     \begin{enumerate}
+     \item A notification pops up to let the user know about the required fields
+     \item The app is scrolled the field needed to be filled
+     \item The fields are highlighted red to indicate requirement. 
+     \item The keyboard pops up automatically
+     \item Once the fields are filled, the use case enters step 8 of the normal flow.
+     \end{enumerate} \\ \hline
+   Exceptions: & Exceptions to adding account to list
+     \nextitemblank 9b. In step 9 of the normal flow, if the user does not enter a website or username. \\ \hline
+   Includes: & editAccount- steps 3 to 7 would be required to edit an entry within the list and can be separated in its own use case \\ \hline
+   Frequency of Use: & On-demand\\ \hline
+   Special Requirements: & \nextitem Users should not wait >20 seconds for an action to be performed
+     \nextitem Animations should last <250ms
+     \nextitem Colors should be made to be accessible to colorblind
+     \nextitem Application should be made available on all major mobile platforms \\ \hline
+   Assumptions: & \nextitem The Customer has installed and is using the application
+     \nextitem The application is readable to the Customer
+     \nextitem The client has the ability to use the keyboard and interact with the screen. \\ \hline
+   Notes and Issues: & \nextitem Is the minimum and maximum possible length of the password generator feasible for the users?
+     \nextitem Should there be a limit to the amount of accounts added to the list?
+     \nextitem What are the different switches that we can include in the forum?
+     \nextitem should the app request for the master password (the password required to enter the app)or other biometrics for the ability to add an entry to the list?
+     \nextitem Should we use other characters outside of the printable ascii characters? \\ \hline
+\end{xltabular}
+
+
+
+\scriptsize{\begin{xltabular}{\textwidth}{|l|X|}
+  \hline Use Case ID: & UC-2-AB \\ \hline
+  Use Case Name: & Login to Database \\ \hline
+  Created By: Sonali Benni & Last Updated By: Sonali Benni \\ \hline
+  Date Created: February 22, 2022 & Last Revision Date: February 22, 2022 \\ \hline
+  Actors: & \nextitem DeviceUser \\ \hline
+  Description: & This use case is for logging into the app to access passwords. Ideally, the actor would have the app on their phone. They would log into the app and have access to their home screen/ main menu. \\ \hline
+  Trigger: & The DeviceUser clicks on the app on their personal device. \\ \hline
+  Preconditions: & \nextitem The DeviceUser is logged in on their personal device such as a cellphone where the app is located. \nextitem The DeviceUser opens the app \\ \hline
+  Postconditions: & \nextitem The DeviceUser is able to get into the app and is brought to a screen that allows them to enter login information.
+    \nextitem The DeviceUser has successfully entered their information and is brought to a screen that shows their home screen. 
+  Normal Flow: & 
+   Alternative Flows: & \nextitemblank 2b. In step 2 of the normal flow, if the user chooses to manually enter the password rather than generate a new password,
+   \begin{enumerate}
+     \item The entire normal flow can skip to step 9
+   \end{enumerate}
+   \nextitemblank 7b. In step 7 of the normal flow, if the user changes the generated password and then slides the password slider,
+   \begin{enumerate}
+     \item An entirely different password is generated.
+     \item The new password is instantly displayed within the text box.
+     \item The normal use case continues thereafter on step 7 where the user can edit the newly generated password.
+   \end{enumerate}
+   \nextitemblank 9b. In step 9 of the normal flow, if the website field and username field is not filled
+     \begin{enumerate}
+     \item A notification pops up to let the user know about the required fields
+     \item The app is scrolled the field needed to be filled
+     \item The fields are highlighted red to indicate requirement. 
+     \item The keyboard pops up automatically
+     \item Once the fields are filled, the use case enters step 8 of the normal flow.
+     \end{enumerate} \\ \hline
+   Exceptions: & Exceptions to adding account to list
+     \nextitemblank 9b. In step 9 of the normal flow, if the user does not enter a website or username. \\ \hline
+   Includes: & editAccount- steps 3 to 7 would be required to edit an entry within the list and can be separated in its own use case \\ \hline
+   Frequency of Use: & On-demand\\ \hline
+   Special Requirements: & \nextitem Users should not wait >20 seconds for an action to be performed
+     \nextitem Animations should last <250ms
+     \nextitem Colors should be made to be accessible to colorblind
+     \nextitem Application should be made available on all major mobile platforms \\ \hline
+   Assumptions: & \nextitem The Customer has installed and is using the application
+     \nextitem The application is readable to the Customer
+     \nextitem The client has the ability to use the keyboard and interact with the screen. \\ \hline
+   Notes and Issues: & \nextitem Is the minimum and maximum possible length of the password generator feasible for the users?
+     \nextitem Should there be a limit to the amount of accounts added to the list?
+     \nextitem What are the different switches that we can include in the forum?
+     \nextitem should the app request for the master password (the password required to enter the app)or other biometrics for the ability to add an entry to the list?
+     \nextitem Should we use other characters outside of the printable ascii characters? \\ \hline
+\end{xltabular}
+
+
+
+\end{document}}
 
 %% 
 %% Copyright (C) 2021 by Daniel A. Weiss <daniel.weiss.led at gmail.com>
