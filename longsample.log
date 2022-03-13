@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.13)  12 MAR 2022 23:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.13)  12 MAR 2022 23:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1240,44 +1240,44 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 84.
  [2]
-(/usr/share/texlive/texmf-dist/tex/latex/lm/ts1lmr.fd)
-Underfull \vbox (badness 10000) detected at line 187
+(/usr/share/texlive/texmf-dist/tex/latex/lm/ts1lmr.fd) [3]
+Underfull \vbox (badness 10000) detected at line 192
  []
 
-[3] [4] [5] [6]
-Underfull \vbox (badness 10000) detected at line 255
+[4] [5] [6]
+Underfull \vbox (badness 10000) detected at line 260
  []
 
 [7]
-Underfull \vbox (badness 10000) detected at line 312
+Underfull \vbox (badness 10000) detected at line 317
  []
 
 [8] [9]
-Underfull \vbox (badness 10000) detected at line 378
+Underfull \vbox (badness 10000) detected at line 383
  []
 
 [10] [11]
-Underfull \vbox (badness 10000) detected at line 454
+Underfull \vbox (badness 10000) detected at line 459
  []
 
 [12] [13] [14] AED endfloat: Processing end Figures and Tables [15]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 456.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 456.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 461.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 461.
 
 (./longsample.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 456.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 456.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 461.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 461.
 Package rerunfilecheck Info: File `longsample.out' has not changed.
-(rerunfilecheck)             Checksum: D633FE7551C58BF81CFE35633EF1F96F;490.
+(rerunfilecheck)             Checksum: 701E2296A23C94D256A9B7049E47B532;586.
 Package logreq Info: Writing requests to 'longsample.run.xml'.
 \openout1 = `longsample.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 28464 strings out of 482555
- 542312 string characters out of 5952145
- 1422948 words of memory out of 5000000
- 43492 multiletter control sequences out of 15000+600000
+ 28468 strings out of 482555
+ 542358 string characters out of 5952145
+ 1420951 words of memory out of 5000000
+ 43494 multiletter control sequences out of 15000+600000
  570991 words of font info for 54 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  68i,11n,68p,1455b,4915s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1287,10 +1287,10 @@ s/enc/dvips/lm/lm-mathsy.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/
 lm/lmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr12.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on longsample.pdf (15 pages, 125058 bytes).
+Output written on longsample.pdf (15 pages, 125931 bytes).
 PDF statistics:
- 220 PDF objects out of 1000 (max. 8388607)
- 197 compressed objects within 2 object streams
- 97 named destinations out of 1000 (max. 500000)
- 69 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 229 PDF objects out of 1000 (max. 8388607)
+ 205 compressed objects within 3 object streams
+ 99 named destinations out of 1000 (max. 500000)
+ 85 words of extra memory for PDF output out of 10000 (max. 10000000)
 
