@@ -103,21 +103,6 @@ The project will consist of two types of coding assignments, one for frontend de
 
 \subsection{Requirements Elicitation}
 
-\begin{xltabular}{\textwidth}{|l|X|}
-
-  \hline Use Case ID: & UC-232 \\ \hline
-  Created By: Gentman Tan & Last Updated By: Gentman Tan \\ \hline
-  Actors: & \nextitem User \nextitem MobileDevice \nextitem PassUSB \\ \hline
-  Description: & Initialize a secure connection between the Owner's MobileDevice to the PassUSB for future device communication \\ \hline
-  Preconditions: & \nextitem The User has created a database \nextitem The User has opened the app and unlocked their database \nextitem The User has selected the menu option to pair a new device\\ \hline
-  Normal Flow: &
-  \nextitem User is prompted to enable Bluetooth discovery mode 
-  \nextitem Once found, the Bluetooth dongle's name and serial number is displayed
-  \nextitem User is prompted to either allow or decline the pairing process with the displayed bluetooth dongle
-  \nextitem When the "Allow" option is chosen, the MobileDevice and PassUSB is subsequently paired \\ \hline
-
-\end{xltabular}
-
 \scriptsize{\begin{xltabular}{\textwidth}{|l|X|}
   \hline Use Case ID: & UC-1-AA \\ \hline
 
@@ -269,10 +254,64 @@ The project will consist of two types of coding assignments, one for frontend de
 
 \end{xltabular}
 
+\scriptsize{\begin{xltabular}{\textwidth}{|l|X|}
+  \hline Use Case ID: & UC-2-AB \\ \hline
 
+  Use Case Name: & Pair Dongle \\ \hline
+
+  Created By: Gentman Tan & Last Updated By: Gentman Tan\\ \hline
+
+  Date Created: February 22, 2022 & Last Revision Date: February 22, 2022 \\ \hline
+
+  Actors: & \nextitem DeviceUser 
+    \nextitem Mobile Device
+    \nextitem PassUSB \\ \hline
+  
+  Description: &  Initialize a secure connection between the DeviceUser’s MobileDevice to the PassUSB for future device communication. \\ \hline
+
+  Trigger: &  The DeviceUser initializes the pairing subroutine \\ \hline
+
+  Preconditions: & \nextitem The DeviceUser is logged in on their personal device such as a cellphone where the app is located \nextitem The DeviceUser has the app opened \nextitem The DeviceUser has created a database \nextitem The DeviceUser has logged into a database \\ \hline
+
+  Postconditions: & \nextitem The DeviceUser has successfully paired the PassUSB dongle to their database  \\ \hline
+
+  Normal Flow: & 
+    \begin{itemize}
+      \item The DeviceUser selects the "Pair Dongle" option in the drop down menu
+      \item AccountHolder is prompted to enable bluetooth discovery mode
+      \item The app searches for a PassUSB dongle
+      \item Once found, the Bluetooth dongle's name, serial number and PIN number is displayed
+      \item AccountHolder is prompted to either allow or decline the pairing process
+      \item Once the AccoutHolder presses "Allow", they are prompted to enter the PIN number displayed on the PassUSB
+      \item Once the PIN number is entered and confirmed, the devices are subsequently paired
+    \end{itemize} \\ \hline
+
+  Alternative Flows: & 1a. In step 1 of the normal flow, a Bluetooth dongle is already paired 
+    \begin{enumerate}
+      \item The app will prompt the user to either unpair the already paired dongle or cancel the pairing process
+      \item If the unpair button is pressed, the currently paired dongle is unpaired and PairDongle resumes on step 2
+      \item If the cancel button is pressed, the pairing dialog box is closed and the PairDongle use case exits
+    \end{enumerate} \\ \hline
+  Exceptions: & \nextitemblank 3a. In step 3 of the normal flow, a Bluetooth dongle is not found  
+    \begin{enumerate}
+      \item The app will prompt the user to either retry or cancel the pairing process 
+      \item If the retry button is selected, PairDongle resumes on step 3 
+      \item If the cancel button is pressed, the pairing dialog box is closed and the PairDongle use case exits
+    \end{enumerate} \\ \hline
+
+  Includes: & N/A \\ \hline
+
+  Frequency of Use: & On-demand \\ \hline
+
+  Special Requirements: & \nextitem The app should filter out other unrelated Bluetooth devices that are discovered \\ \hline
+
+  Assumptions: & \nextitem The DeviceUser understands English and knows their username and password for the app. \nextitem The DeviceUser has a funcitonal and powered PassUSB dongle \\ \hline
+
+  Notes and Issues: & \nextitem Should the user have the ability to pair multiple different PassUSB dongles simultaneously? \\ \hline
+
+\end{xltabular}
 
 \end{document}}
-
 %% 
 %% Copyright (C) 2021 by Daniel A. Weiss <daniel.weiss.led at gmail.com>
 %% 
