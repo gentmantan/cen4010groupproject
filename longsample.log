@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.13)  12 MAR 2022 23:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.13)  12 MAR 2022 23:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1302,7 +1302,7 @@ s/enc/dvips/lm/lm-mathsy.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/
 lm/lmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr12.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on longsample.pdf (18 pages, 128804 bytes).
+Output written on longsample.pdf (18 pages, 128803 bytes).
 PDF statistics:
  267 PDF objects out of 1000 (max. 8388607)
  240 compressed objects within 3 object streams
