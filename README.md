@@ -12,7 +12,7 @@ There's also object diagram stuff but I need to clarify with M.C. Kianoosh some 
 
 A list of use case topics we can choose from; of course if you'd like feel free to write your heart out on some other topic
 
-##### Independent use cases
+#### Independent use cases
 * Changing database password 
   * not account entry password, password to entire database
 * Modifying account details 
@@ -37,21 +37,21 @@ A list of use case topics we can choose from; of course if you'd like feel free 
 * Search database
   * A search field that would search by name or url for example
 
-##### Use cases for refractoring (to be 'included' in existing use cases)
+#### Use cases for refractoring (to be 'included' in existing use cases)
 * Send to recycling bin
   * An alternative flow to _Remove Account_
 * Select multiple accounts
   * [See this](https://material.io/design/interaction/selection.html#item-selection)
 
 
-##### Completed Use Cases 
+#### Completed Use Cases 
 * ~~Add account~~
 * ~~Generate Password~~
 * ~~Remove account~~
 * ~~Logging into app~~
 * ~~Pair Dongle~~
 
-##### Notes on diagrams
+#### Notes on diagrams
 When it comes to drawing the diagrams I'd recommend we look into [PlantUML](https://plantuml.com/starting), it would save me a bit of time/CPU cycles if you guys/gals would draw them using it. I find it really simplifies the whole process and of course makes things look fantastic. For example on our last assignment, our sequence diagram looked like this:
 
 ![Sequence Diagram](seqdiag.png)
