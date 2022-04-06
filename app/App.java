@@ -1,9 +1,8 @@
-package App;
-
 public class App
 {
     private BluetoothIO io;
     private EncryptedFile ef;
+    private String pass;
 
     public App(){
         UI ui = new UI();
@@ -17,7 +16,7 @@ public class App
         EncryptedFile ef = new EncryptedFile();
     }
 
-    public void openEncryptedFile(){
+    public void storeEncryptedFilePass(){
 
     }
 
