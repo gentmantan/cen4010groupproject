@@ -17,14 +17,16 @@ public class addAccountView(){
   
   }
   
-  public void insertUser(){
+  public void enterInfo(){
   
-  }
+      insertUser(){
+    
+      }
   
   
-  public void inserPwd(){
-  
-  
+      insertPwd(){
+   
+      }
   }
   
   public void generatePwd(){
@@ -32,7 +34,10 @@ public class addAccountView(){
       int charNum;
       int pwdNum;
       char pwdChar;
-      booleen reqMet; 
+      boolean reqMet; 
+      boolean hasSpecialChar;
+      boolean hasNum;
+      boolean hasletters;
 
   }
   
@@ -46,10 +51,17 @@ public class addAccountView(){
   
   }
   
-  public void pushButton(){
+  public void savePwd(){
   
   
   }
+  
+  public void notifyUser(){
+    
+    
+  }
+  
+  
 
 
   
