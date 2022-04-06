@@ -7,11 +7,8 @@ public class EncryptedFile
         this.db = db;
     }
 
-    public void decryptDatabase(String pass){
-
-    }
-
-    public Database getDatabase(){
+    public Database decryptDatabase(String pass){
+        //some decryption logic
         return db;
     }
 }
