@@ -53,10 +53,23 @@ A list of use case topics we can choose from; of course if you'd like feel free 
 
 #### Assigned Use Cases
 * Chidie
-  * Nuke Password
-  * Recover Password
+    * Nuke Password
+    * Recover Password
+* Sonali
+    * Changing database password
+    * Modifying account details
+* Kaiya 
+    * Lock app
+    * Search database
+* Rey
+    * Copy username/password to clipboard
+    * Check database for password breach
+* Gentman
+    * Backup Database
+    * Create account entry group
 
-#### Notes on diagrams
+  
+#### notes on diagrams
 When it comes to drawing the diagrams I'd recommend we look into [PlantUML](https://plantuml.com/starting), it would save me a bit of time/CPU cycles if you guys/gals would draw them using it. I find it really simplifies the whole process and of course makes things look fantastic. For example on our last assignment, our sequence diagram looked like this:
 
 ![Sequence Diagram](seqdiag.png)
@@ -90,4 +103,4 @@ Deactivate Foo1
 ```
 
 So yeah super simple syntax, after writing it you just do `java -jar plantuml.jar sequenceDiagram.txt` or what have you to convert it into an image. Alright I'll stop shilling now.
-
+     
