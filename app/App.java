@@ -16,27 +16,20 @@ public class App
         EncryptedFile ef = new EncryptedFile();
     }
 
-    public void storeEncryptedFilePass(){
-
+    public void storeEncryptedFilePass(String pass){
+        this.pass = pass;
     }
 
     public Database getDatabase(){ //should we pass the entire database or only specific interfaces?
-
+        return ef.decryptDatabase(pass);
     }
 
     /**
      * Returns a list of DongleAddress objects to be chosen
      */
-    public ArrayList searchDongle(){
 
-    }
-
-    public void selectDongle(DongleAddress addr){
-
-    }
-
-    public void keyboardInput(String input){
-
+    public BluetoothIO getDongle(){
+        return io;
     }
 
 }
