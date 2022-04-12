@@ -15,7 +15,7 @@ public class App
      */
     public void newApp(){
         BluetoothIO io = new BluetoothIO();
-        Database db = new Database(pass);
+        Database db = new Database();
         this.io = io;
         this.db = db;
     }
