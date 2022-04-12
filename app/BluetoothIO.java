@@ -1,10 +1,12 @@
+import java.util.ArrayList;
+
 public class BluetoothIO
 {
     public BluetoothIO(){
 
     }
 
-    public ArrayList searchDongle(){
+    public ArrayList<DongleAddress> searchDongle(){
 
     }
 
