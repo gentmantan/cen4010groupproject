@@ -1,21 +1,22 @@
 class PassGenView{
-    private String password;
+    private String pass;
     private boolean capital;
     private boolean special;
     private int length;
 
     public String getPass(){
-        return password;
-    }
-    public void inputPassword(){
-
+        return pass;
     }
 
-    public void printPassword(){
+    public void inputPass(){
 
     }
 
-    public void generatePassword(){
+    public void printPass(){
+
+    }
+
+    public void generatePass(){
 
     }
 
