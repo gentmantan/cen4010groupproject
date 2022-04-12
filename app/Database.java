@@ -1,22 +1,13 @@
 public class Database
 {
-    private List<Directory> dirs;
-    private EncryptedFile encryptedFile;
+    private Directory root;
 
-    public Directory getDirectory(int index){
-
+    public Database(){
+        root = new Directory();
     }
 
-    public void addDirectory(Directory input){
-
-    }
-
-    public EncryptedFile getEncryptedFile() {
-
-    }
-
-    public void setEncryptedFile(EncryptedFile input) {
-
+    public Directory getRoot(){
+        return root;
     }
 
 }

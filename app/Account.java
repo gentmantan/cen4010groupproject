@@ -4,7 +4,6 @@ public class Account
     private String user;
     private String password;
     private String email;
-    private Directory dir;
 
     public String getUser(){ 
 
@@ -22,11 +21,7 @@ public class Account
         
     }
     
-    public Directory getDir(){
-        
-    }
-
-    public void setUser(String input){ 
+    public void setUser(String input){
 
     }
 
@@ -42,7 +37,4 @@ public class Account
         
     }
 
-    public Directory setDir(Directory input){
-        
-    }
 }

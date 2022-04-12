@@ -1,16 +1,12 @@
-import java.util.ArrayList;
+import java.util.List;
 
 public class Directory
 {
     private String name;
-    private Database database;
     private List<Account> entries;
+    private List<Directory> directories;
 
-    public Database getDatabase(){
-
-    }
-
-    public void setDatabase() {
+    public List<Account> getAccountListNames(){
 
     }
 
@@ -19,6 +15,10 @@ public class Directory
     }
 
     public void addAccount(Account input){ //should we pass the entire database or only specific interfaces?
+
+    }
+
+    public void addDirecotry(Directory input){
 
     }
 
