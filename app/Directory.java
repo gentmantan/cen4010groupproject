@@ -18,7 +18,7 @@ public class Directory
 
     }
 
-    public void addDirecotry(Directory input){
+    public void addDirectory(Directory input){
 
     }
 
