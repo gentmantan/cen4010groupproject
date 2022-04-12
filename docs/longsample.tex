@@ -522,6 +522,56 @@ Without password managers, users are succeptable to password leaks which can lea
 
 \end{xltabular}
 
+\scriptsize{\begin{xltabular}{\textwidth}{|l|X|}
+  \hline Use Case ID: & UC-6-AC \\ \hline
+
+  Use Case Name: & Create account entry group \\ \hline
+
+  Created By: Gentman Tan & Last Updated By: Gentman Tan\\ \hline
+
+  Date Created: April 9, 2022 & Last Revision Date: April 9, 2022 \\ \hline
+
+  Actors: & \nextitem DeviceUser \\ \hline
+
+  Description: & This use case specifies the process of which an account entry is grouped \\ \hline
+
+  Trigger: & The DeviceUser presses the 'add group' button. \\ \hline
+
+  Preconditions: & \nextitem The DeviceUser is logged in on their personal device such as a cellphone where the app is located \nextitem The DeviceUser has the app opened \nextitem The DeviceUser has created a database \nextitem The DeviceUser has logged into a database \\ \hline
+
+  Postconditions: & \nextitem An account entry group is created \\ \hline
+
+  Normal Flow: &
+    \begin{enumerate}
+            \item The DeviceUser presses the 'add group' button
+            \item A new list entry is presented in the account list view section of the app with a folder icon and text entry field for the user to create a new name for the account group
+            \item The DeviceUser types in an appropriate name for the account group
+            \item The DeviceUser presses return on their keyboard and the account group is created
+
+    \end{enumerate} \\ \hline
+
+  Alternative Flows: &
+                       \nextitemblank 3a. In step 3, the user does not input any characters for a name for the folder
+                       \begin{enumerate}
+                               \item The DeviceUser presses retur no ntheir keyboard and an account group with the name ``New Folder'' is created. If a folder exists with this name, a number will be appended to the name i.e. ``New Folder (<number>)''
+                       \end{enumerate}
+              \\ \hline
+
+  Exceptions: &
+                N/A
+              \\ \hline
+  Includes: & N/A \\ \hline
+
+  Frequency of Use: & On-demand \\ \hline
+
+  Special Requirements: & \nextitem The backup file should be resilient to data corruption \\ \hline
+
+  Assumptions: & \nextitem The DeviceUser is able to use the application without issue on their device(s). \nextitem The DeviceUser understands which button to choose to create an account group \\ \hline
+
+  Notes and Issues: & N/A \\ \hline
+
+\end{xltabular}
+
 \pagebreak
 
 \section{Appendix}
