@@ -1,27 +1,17 @@
-class PassEntryView{
-    private UI ui;
+class PassGenView{
     private String password;
     private boolean capital;
     private boolean special;
     private int length;
 
-    public UI getUI(){ 
-
+    public String getPass(){
+        return password;
     }
-
-    private void setUI(){ 
-
-    }
-
     public void inputPassword(){
 
     }
 
     public void printPassword(){
-
-    }
-
-    public void copyToClipboard(){
 
     }
 
