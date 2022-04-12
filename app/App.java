@@ -44,8 +44,8 @@ public class App
         ui.drawReadAcctView(acct);
     }
 
-    public Database editAccount(Account acct){
-        ui.drawEditAccountView(acct);
+    public Account editAccount(Account acct){
+        return ui.drawEditAcctView(acct);
     }
 
 }
