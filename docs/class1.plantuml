@@ -1,0 +1,131 @@
+@startuml
+skinparam groupInheritance 2
+
+class App {
+  -io: BluetoothIO
+  -db: Database
+  -pass: String
+  -ui: UI
+  +newApp(): void
+  +storeEncryptedFilePass(pass: String): void
+  +getDongle(): BluetoothIO
+  +getPass(): String
+  +generatePass(): String
+  +selectAcccount(): Account
+  +viewAccount(acct: Account): void
+  +editAccount(acct: Account): Account
+}
+
+class BluetoothIO {
+  +searchDongle(): ArrayList<DongleAddress>
+  +selectDongle(addr: DongleAddress): void
+  +keyboardInput(input: String): void
+  +pairDongle(addr: DongleAddress): void
+}
+
+'class EncryptedFile {
+''  -Database db
+''  +EncryptedFile(){
+''  }
+''}
+    class Directory {
+      -name: String
+      -entries: List<Account>
+      -directories: List<Directory>
+      +getAccountListNames(): List<Account>
+      +getAccount(index: int): Account
+      +addAccount(input: Account): void
+      +addDirectory(input: Directory): void
+      +getName(): String
+      +setName(input: String): void
+    }
+
+    class Database{
+      -root: Directory
+      -dbpass: String
+      +Database(dbpass: String)
+      +getRoot(): Directory
+    }
+
+    class Account {
+      -website: String
+      -user: String
+      -password: String
+      -email: String
+    }
+
+    class UI{
+      +drawPassGenView(): String
+      +drawListAcctView(db: Database): Account
+      +drawEditAcctView(acct: Account): Account
+      +drawReadAcctView(acct: Account): void
+      +drawDBLoginView(): String
+    }
+
+    abstract AcctView{
+      #acct: Account
+      #accountName: String;
+      #userName: String;
+      #password: String;
+      #url: String;
+      #expires: String;
+      #notes: String;
+      +AcctView(acct: Account)
+    }
+
+    class ListAcctView{
+      -db: Database
+      +setDatabase(db: Database): void
+      +printAcctDirName(): void
+      +showEntry(): void
+      +enterEntry(): Account
+      +inputAcct(): void
+      +jumpToLetter(): void
+    }
+
+    class PassGenView{
+      -pass: String
+      -capital; boolean
+      -special: boolean
+      -length: int
+      +getPass(): String
+      +inputPass(): void
+      +printPass(): void
+      +generatePass(): void
+      +capitalize(): void
+      +specialChars(): void
+      +setSlider(): void
+    }
+
+    class DBLoginView{
+
+    }
+class ReadAcctView
+class EditAcctView
+
+App "1" -- "1" BluetoothIO
+
+'App "1" -- "1" EncryptedFile
+'EncryptedFile "1" *-- "1" Database
+App "1" -- "1" Database
+Database "1" *-- "*" Directory
+Directory "1" *-- "*" Account
+
+App "1" -- "1" UI
+UI *--  AcctView
+
+note right of Directory
+  context Directory
+  inv : self.Account password !=NULL
+
+  context Directory
+  inv: self.entries -> size <= 1000
+end note
+
+
+AcctView <|-- EditAcctView
+AcctView <|-- ReadAcctView
+UI *-- ListAcctView
+UI *-- PassGenView
+UI *-- DBLoginView
+@enduml
