@@ -6,11 +6,9 @@ public class EditAcctView extends AcctView
     }
 
     public Account getAccount(){
-        return acct;
     }
 
-    public String printAccountName() {
-        return accountName;
+    public void printAccountName() {
     }
 
 
@@ -19,8 +17,7 @@ public class EditAcctView extends AcctView
     }
 
 
-    public String printUserName() {
-        return userName;
+    public void printUserName() {
     }
 
 
@@ -29,8 +26,7 @@ public class EditAcctView extends AcctView
     }
 
 
-    public String printPassword() {
-        return password;
+    public void printPassword() {
     }
 
 
@@ -39,8 +35,7 @@ public class EditAcctView extends AcctView
     }
 
 
-    public String printUrl() {
-        return url;
+    public void printUrl() {
     }
 
 
@@ -49,8 +44,7 @@ public class EditAcctView extends AcctView
     }
 
 
-    public String printExpires() {
-        return expires;
+    public void printExpires() {
     }
 
 
@@ -59,8 +53,7 @@ public class EditAcctView extends AcctView
     }
 
 
-    public String printNotes() {
-        return notes;
+    public void printNotes() {
     }
 
 

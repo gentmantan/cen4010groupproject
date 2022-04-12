@@ -6,33 +6,27 @@ public class ReadAcctView extends AcctView
     }
 
 
-    public String printAccountName() {
-        return accountName;
+    public void printAccountName() {
     }
 
 
-    public String printUserName() {
-        return userName;
+    public void printUserName() {
     }
 
 
-    public String printPassword() {
-        return password;
+    public void printPassword() {
     }
 
 
-    public String printUrl() {
-        return url;
+    public void printUrl() {
     }
 
 
-    public String printExpires() {
-        return expires;
+    public void printExpires() {
     }
 
 
-    public String printNotes() {
-        return notes;
+    public void printNotes() {
     }
 
 
