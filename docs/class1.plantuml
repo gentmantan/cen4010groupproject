@@ -52,6 +52,14 @@ class BluetoothIO {
       -user: String
       -password: String
       -email: String
+      +getUser(): String
+      +getWebsite(): String
+      +getPassword(): String
+      +getEmail(): String
+      +setUser(String input): void
+      +setWebsite(String input): void
+      +setPassword(String input): void
+      +setEmail(String input): void
     }
 
     class UI{
@@ -98,10 +106,35 @@ class BluetoothIO {
     }
 
     class DBLoginView{
-
+      +inputPass(): String
     }
-class ReadAcctView
-class EditAcctView
+
+    class ReadAcctView{
+      +ReadAcctView(acct: Account)
+      +printAccountName(): void
+      +printUserName(): void
+      +printPassword(): void
+      +printUrl(): void
+      +printExpires(): void
+      +printNotes(): void
+    }
+
+    class EditAcctView{
+      +EditAcctView(acct: Account)
+      +getAccount(): Account
+      +printAccountName(): void
+      +inputAccountName(accountName: String): void
+      +printUserName(): void
+      +inputUserName(userName: String): void
+      +printPassword(): void
+      +inputPassword(password: String): void
+      +printUrl(): void
+      +inputUrl(String url): void
+      +printExpires(): void
+      +inputExpires(): void
+      +printNotes(): void
+      +inputNotes(String notes): void
+    }
 
 App "1" -- "1" BluetoothIO
 
