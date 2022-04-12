@@ -8,13 +8,18 @@
  *
  * @author Chidie17
  */
-public abstract class AcctView extends UI{
-    private String accountName;
-    private String userName;
-    private String password;
-    private String url;
-    private String expires;
-    private String notes;
-    
-    public String getAcct(){};
+public abstract class AcctView {
+    protected Account acct;
+    protected String accountName;
+    protected String userName;
+    protected String password;
+    protected String url;
+    protected String expires;
+    protected String notes;
+
+    public AcctView(Account acct){
+        this.acct = acct;
+    }
+
+
 }
