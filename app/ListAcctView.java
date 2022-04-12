@@ -1,13 +1,9 @@
 class ListAcctView {
 
-    private UI ui;
+    private Database db;
 
-    public UI getUI(){ 
-
-    }
-
-    private void setUI(){ 
-
+    public void setDatabase(Database db){
+        this.db = db;
     }
 
     public void printAcctDirName(){
@@ -18,7 +14,7 @@ class ListAcctView {
 
     }
 
-    public void enterEntry(){
+    public Account enterEntry(){
 
     }
 

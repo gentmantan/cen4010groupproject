@@ -1,26 +1,71 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package javaapplication55;
+public class EditAcctView extends AcctView
+{
 
-/**
- *
- * @author Chidie17
- */
-public class EditAcctView extends AcctView{
-    private String accountName;
-    private String userName;
-    private String password;
-    private String url;
-    private String expires;
-    private String notes;
-    
-    public void setAccountName(){};
-    public void setUserName(){};
-    public void setPassword(){};
-    public void setURL(){};
-    public void setExpires(){};
-    public void setNotes(){};
+    public EditAcctView(Account acct){
+        super(acct);
+    }
+
+    public Account getAccount(){
+        return acct;
+    }
+
+    public String printAccountName() {
+        return accountName;
+    }
+
+
+    public void inputAccountName(String accountName) {
+        this.accountName = accountName;
+    }
+
+
+    public String printUserName() {
+        return userName;
+    }
+
+
+    public void inputUserName(String userName) {
+        this.userName = userName;
+    }
+
+
+    public String printPassword() {
+        return password;
+    }
+
+
+    public void inputPassword(String password) {
+        this.password = password;
+    }
+
+
+    public String printUrl() {
+        return url;
+    }
+
+
+    public void inputUrl(String url) {
+        this.url = url;
+    }
+
+
+    public String printExpires() {
+        return expires;
+    }
+
+
+    public void inputExpires(String expires) {
+        this.expires = expires;
+    }
+
+
+    public String printNotes() {
+        return notes;
+    }
+
+
+    public void inputNotes(String notes) {
+        this.notes = notes;
+    }
+
 }
