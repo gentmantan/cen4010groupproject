@@ -70,12 +70,12 @@ A list of use case topics we can choose from; of course if you'd like feel free 
 
 #### Our lovely class diagram
 
-![Class Diagram](class1.png "A thing of beauty is a joy forever")
+![Class Diagram](diag/group/class1.png "A thing of beauty is a joy forever")
   
 #### notes on diagrams
 When it comes to drawing the diagrams I'd recommend we look into [PlantUML](https://plantuml.com/starting), it would save me a bit of time/CPU cycles if you guys/gals would draw them using it. I find it really simplifies the whole process and of course makes things look fantastic. For example on our last assignment, our sequence diagram looked like this:
 
-![Sequence Diagram](seqdiag.png)
+![Sequence Diagram](diag/group/seqdiag.png)
 
 And the whole 'code' needed for it is
 
