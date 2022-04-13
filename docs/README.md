@@ -54,7 +54,7 @@ A list of use case topics we can choose from; of course if you'd like feel free 
 #### Assigned Use Cases
 * Chidie
     * Nuke Password
-    * Recover Password
+    * Reset Password
 * Sonali
     * Changing database password
     * Modifying account details
