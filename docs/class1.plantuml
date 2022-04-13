@@ -17,10 +17,10 @@ class App {
 }
 
 class BluetoothIO {
-  +searchDongle(): ArrayList<DongleAddress>
-  +selectDongle(addr: DongleAddress): void
+  +searchDongle(): ArrayList<String>
+  +selectDongle(addr: String): void
   +keyboardInput(input: String): void
-  +pairDongle(addr: DongleAddress): void
+  +pairDongle(addr: String): void
 }
 
 'class EncryptedFile {
