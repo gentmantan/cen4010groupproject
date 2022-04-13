@@ -1,22 +1,14 @@
 public class Database
 {
-    private List<Directory> dirs;
-    private EncryptedFile encryptedFile;
+    private Directory root = new Directory();
+    private String dbpass;
 
-    public Directory getDirectory(int index){
-
+    public Database(String dbpass) {
+        this.dbpass = dbpass;
     }
 
-    public void addDirectory(Directory input){
-
-    }
-
-    public EncryptedFile getEncryptedFile() {
-
-    }
-
-    public void setEncryptedFile(EncryptedFile input) {
-
+    public Directory getRoot(){
+        return root;
     }
 
 }

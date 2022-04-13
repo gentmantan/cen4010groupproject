@@ -1,11 +1,13 @@
 public class App
 {
     private BluetoothIO io;
-    private EncryptedFile ef;
+    private Database db;
     private String pass;
+    private UI ui;
 
     public App(){
         UI ui = new UI();
+        this.ui = ui;
     }
 
     /**
@@ -13,23 +15,37 @@ public class App
      */
     public void newApp(){
         BluetoothIO io = new BluetoothIO();
-        EncryptedFile ef = new EncryptedFile();
+        Database db = new Database();
+        this.io = io;
+        this.db = db;
     }
 
     public void storeEncryptedFilePass(String pass){
-        this.pass = pass;
+        //store a hashed version of the input password
     }
-
-    public Database getDatabase(){ //should we pass the entire database or only specific interfaces?
-        return ef.decryptDatabase(pass);
-    }
-
-    /**
-     * Returns a list of DongleAddress objects to be chosen
-     */
 
     public BluetoothIO getDongle(){
         return io;
+    }
+
+    public String getPass(){
+        return ui.drawDBLoginView();
+    }
+
+    public String generatePass(){
+        return ui.drawPassGenView();
+    }
+
+    public Account selectAccount(){
+        return ui.drawListAcctView(db);
+    }
+
+    public void viewAccount(Account acct){
+        ui.drawReadAcctView(acct);
+    }
+
+    public Account editAccount(Account acct){
+        return ui.drawEditAcctView(acct);
     }
 
 }

@@ -1,14 +1,16 @@
+import java.util.ArrayList;
+
 public class BluetoothIO
 {
-    public BluetoothIO(){
+   /**
+    * Returns a list of dongle MAC addresses
+    *
+    */
+    public ArrayList<String> searchDongle(){
 
     }
 
-    public ArrayList searchDongle(){
-
-    }
-
-    public void selectDongle(DongleAddress addr){
+    public void selectDongle(String addr){
 
     }
 
@@ -16,7 +18,7 @@ public class BluetoothIO
 
     }
 
-    private void pairDongle(DongleAddress addr){
+    private void pairDongle(String addr){
 
     }
 }
