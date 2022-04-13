@@ -16,5 +16,13 @@ public abstract class AcctView extends UI{
     private String expires;
     private String notes;
     
-    public String getAcct(){};
+    public String getAcct(){}
+
+    public void pressPasswordCopyButton(){}
+
+    public void pressAccountCopyButton(){}
+    
+    public void pressEmailCopyButton(){}
+
+    public void pressWebsiteCopyButton(){}
 }
