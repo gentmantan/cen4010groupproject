@@ -523,31 +523,38 @@ The project will span a 7 week timeline and will be made possible via the use of
       \item The DeviceUser presses the 'backup' menu entry.
       \item The DeviceUser is shown a system directory chooser and is prompted to select a directory to be used to save the database backup
       \item The DeviceUser chooses a directory
+      \item The DeviceUser is prompted to enter a password to secure the backup file and enters a password
       \item The DeviceUser receives confirmation that the account database is backed up onto the specified directory with the filename passusb-<date>.bak, where <date> would be in the format MMDDYYYY, for example 01012001 for January 1, 2001.
     \end{enumerate} \\ \hline
 
   Alternative Flows: &
                        \nextitemblank 3a. In step 3, a file of the same name as the backup file already exists
                        \begin{enumerate}
-                               \item The DeviceUser is prompted that a file of the same name as the new backup
-                               \item The DeviceUser chooses to either overwrite the file, rename the new file backup file or cancel the backup procedure
+                               \item The DeviceUser is prompted in a dialog box that a file of the same name as the new backup
+                               \item In the same dialog box DeviceUser is presented with the button options 'overwrite file', 'rename backup file' or 'cancel'
+                               \item If the DeviceUser chooses the 'overwrite file' button, the file existing on the external storage device is overwritten. If the DeviceUser chooses the 'rename backup file' option, a string ``(<num>)'' is appended to the new file, where <num> starts from 1 and is incremented if a new filename already exists. If the DeviceUser chooses the 'cancel' option, the Backup Database subroutine exits.
                        \end{enumerate}
-                       
-
-              \\ \hline
+                       \nextitemblank 4a. In step 4, the DeviceUser does not enter a password
+                       \begin{enumerate}
+                               \item The DeviceUser is prompted that storing an unencrypted database can be unsafe, and that it is recommended to enter a password. The user can choose the 'Back' button to return to the beginning of step 4, or the 'Continue Anyways' button to continue saving the unencrypted backup of the account database
+                       \end{enumerate} \\ \hline
 
   Exceptions: &
                 \nextitemblank 3b. In step 3, the directory is unwriteable
                        \begin{enumerate}
                                \item The DeviceUser is prompted that the directory that has been chosen is invalid and is presented the corresponding error (for example, directory is read only)
-                               \item The DeviceUser is presented with the options to either choose a new directory or cancel the backup procedure
+                               \item The DeviceUser is presented with button options to either choose a new directory or cancel the backup procedure
+                       \end{enumerate}
+                 \nextitemblank 3b. In step 3, the directory does not have enough free space to store the database backup
+                       \begin{enumerate}
+                               \item The DeviceUser is prompted with an error dialog notifying that the chosen directory does not have enough free space, and is presented with a 'choose another directory' button to restart step 3 or a 'cancel' button to exit the backup
                        \end{enumerate}
               \\ \hline
   Includes: & N/A \\ \hline
 
   Frequency of Use: & On-demand \\ \hline
 
-  Special Requirements: & \nextitem The backup file should be resilient to data corruption \\ \hline
+  Special Requirements: & \nextitem The backup file should incorporate checksumming in order to ensure data consistency \\ \hline
 
   Assumptions: & \nextitem The DeviceUser is able to use the application without issue on their device(s). \nextitem The DeviceUser understands which button to choose to backup the database \nextitem The DeviceUser uses a storage medium with a filesystem that is supported by the mobile operating system. \\ \hline
 
