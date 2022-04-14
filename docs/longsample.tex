@@ -102,7 +102,40 @@ The project will consist of two types of coding assignments, one for frontend de
 \section{Current System}
 Without password managers, users are succeptable to password leaks which can lead to the exploitation of other accounts that the user owns if the same password is used. Also, the memorization of increasingly entropic passwords for many accounts is becoming an increasingly difficult challenge. Password managers presently exist to solve these issues; however, the login process can be tedious if the application or website that is to be logged into is on a device that has not been set up with a user's password manager and account database.
 
-%%Chapter 3 here 
+\section{Project Plan}
+
+The project will span a 7 week timeline and will be made possible via the use of various hardware and software components. Due to the PassUSB system's design specification requiring the usage of various forms of hardware communicating via the interference-prone protocol Bluetooth, regular testing must be performed to ensure the minimization of software faults.
+
+\subsection{Project Organization}
+\begin{enumerate}
+        \item Sonali Benni: <role>
+        \item Rey Jairus Marasigan: <role>
+        \item Chidiebere Otuonye: <role>
+        \item Kaiya Roberts: <role>
+        \item Gentman Tan: Project Manager, Developer
+\end{enumerate}
+
+\subsection{Hardware and software requirements}
+\begin{enumerate}
+  \item Hardware:
+        \begin{enumerate}
+                \item Multi-core workstations for code building and continuous testing
+                \item Programmable microcontroller with HID-capable USB controller and Bluetooth transceiver (STM32 based)
+                \item Mobile devices of varying make and model
+        \end{enumerate}
+  \item Software:
+        \begin{enumerate}
+                \item Flutter cross-platform mobile software development kit
+                \item FlutterBlue third-party library for Bluetooth interface
+                \item Arduino IDE
+                \item Arduino USBHID and ArdunioBLE libraries
+                \item Usage of OS-level virtualization containers for reproducable build environments
+        \end{enumerate}
+\end{enumerate}
+
+\subsection{Table with Project schedule}
+
+\noindent \includegraphics[scale=0.65]{ganttchart.pdf}
 
 \section{Requirements Elicitation}
 
