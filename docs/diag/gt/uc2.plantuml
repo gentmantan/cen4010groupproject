@@ -1,0 +1,12 @@
+@startuml
+
+actor DeviceUser as a1
+
+rectangle App {
+        usecase AddGroup as u1
+        usecase StoreAccount as u2
+}
+
+a1 -- AddGroup
+a2 --> EditDatabase
+@enduml
