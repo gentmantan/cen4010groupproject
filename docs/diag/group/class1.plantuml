@@ -117,6 +117,10 @@ class BluetoothIO {
       +printUrl(): void
       +printExpires(): void
       +printNotes(): void
+      +pressPasswordCopyButton(): void
+      +pressAccountCopyButton(): void
+      +pressEmailCopyButton(): void
+      +pressWebsiteCopyButton(): void
     }
 
     class EditAcctView{
