@@ -523,7 +523,7 @@ The project will span a 7 week timeline and will be made possible via the use of
       \item The DeviceUser presses the 'backup' menu entry.
       \item The DeviceUser is shown a system directory chooser and is prompted to select a directory to be used to save the database backup
       \item The DeviceUser chooses a directory
-      \item The DeviceUser is prompted to enter a password to secure the backup file and enters a password
+      \item The DeviceUser is prompted to enter a password twice to be used to secure the backup file and enters a password
       \item The DeviceUser receives confirmation that the account database is backed up onto the specified directory with the filename passusb-<date>.bak, where <date> would be in the format MMDDYYYY, for example 01012001 for January 1, 2001.
     \end{enumerate} \\ \hline
 
@@ -587,7 +587,6 @@ The project will span a 7 week timeline and will be made possible via the use of
             \item A new list entry is presented in the account list view section of the app with a folder icon and text entry field for the user to create a new name for the account group
             \item The DeviceUser types in an appropriate name for the account group
             \item The DeviceUser presses return on their keyboard and the account group is created
-
     \end{enumerate} \\ \hline
 
   Alternative Flows: &
@@ -621,6 +620,8 @@ The project will span a 7 week timeline and will be made possible via the use of
 \section{Reqirements Analysis}
 
 \subsection{Scenarios}
+
+Backup Database: The DeviceUser decides they would like to create an external backup of their account database. To do so, they open the PassUSB app, open their existing account database, press the drop-down menu button and press the menu entry titled ``Backup Database''. In doing so, a system directory chooser menu will appear prompting the user to choose a suitable directory to store the database backup. The DeviceUser then navigates to the path of their external storage device, and presses the ``Backup To This Directory'' button to choose the directory that will store the database backup. Then, the user is asked to enter a password twice to be used to encrypt the backup file. Once the user confirms the password to be used to backup the file, the backup procedure begins and the user is shown a throbber during the process. After the backup process is complete, the User is notified that the backup has been successfully saved, and is given the name of the saved backup file. The User is brought back to the list of accounts menu.
 
 \subsection{Static model}
 

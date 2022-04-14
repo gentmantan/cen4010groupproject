@@ -5,7 +5,16 @@
 \BOOKMARK [2][-]{section*.6}{Definitions, acronyms, and abbreviations}{section*.2}% 5
 \BOOKMARK [2][-]{section*.7}{Overview of document}{section*.2}% 6
 \BOOKMARK [1][-]{section*.8}{Current System}{}% 7
-\BOOKMARK [1][-]{section*.9}{Requirements Elicitation}{}% 8
-\BOOKMARK [2][-]{section*.10}{Use Cases}{section*.9}% 9
-\BOOKMARK [1][-]{section*.11}{Appendix}{}% 10
-\BOOKMARK [2][-]{section*.12}{Diary of meeting and tasks}{section*.11}% 11
+\BOOKMARK [1][-]{section*.9}{Project Plan}{}% 8
+\BOOKMARK [2][-]{section*.10}{Project Organization}{section*.9}% 9
+\BOOKMARK [2][-]{section*.11}{Hardware and software requirements}{section*.9}% 10
+\BOOKMARK [2][-]{section*.12}{Table with Project schedule}{section*.9}% 11
+\BOOKMARK [1][-]{section*.13}{Requirements Elicitation}{}% 12
+\BOOKMARK [2][-]{section*.14}{Use Cases}{section*.13}% 13
+\BOOKMARK [2][-]{section*.15}{Use Case Diagrams}{section*.13}% 14
+\BOOKMARK [1][-]{section*.16}{Reqirements Analysis}{}% 15
+\BOOKMARK [2][-]{section*.17}{Scenarios}{section*.16}% 16
+\BOOKMARK [2][-]{section*.18}{Static model}{section*.16}% 17
+\BOOKMARK [3][-]{section*.19}{Object Diagrams}{section*.18}% 18
+\BOOKMARK [3][-]{section*.20}{Class Diagram}{section*.18}% 19
+\BOOKMARK [2][-]{section*.21}{Dynamic Model}{section*.16}% 20
