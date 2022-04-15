@@ -771,6 +771,64 @@ The project will span a 7 week timeline and will be made possible via the use of
 
 \end{xltabular}}
 
+\scriptsize{\begin{xltabular}{\textwidth}{|l|X|}
+              \hline Use Case ID: UC-2-BC & \\ \hline
+
+              Use Case Name: Modifying Account Details & \\ \hline
+
+              Created By: Sonali Benni & Last Updated By: Sonali Benni \\ \hline
+
+              Date Created: April 1, 2022 & Last Revision Date: April 1, 2022 \\ \hline
+
+              Actors: \nextitem DeviceUser & \\ \hline
+
+              Description: & This use case is for changing any information to an account that has been already added to the database. It changes the username, password, and other information within an account. \\ \hline
+
+              Trigger: & The actor clicks the manage accounts button within Settings. \\ \hline
+
+             Preconditions: & \nextitem The user is logged into the app on their personal device and goes to Settings.\\ \hline
+
+              Postconditions: & \nextitem Minimal Guarantee: The user is able to click on manage accounts within the app’s Settings. They are then brought to a page that allows them to tap on an account they would like to modify or edit.
+                                \nextitem Success Guarantee: The user is able to select the account they would like to change and are successfully able to make changes. \\ \hline
+
+              Normal Flow: & \begin{enumerate}
+                               \item The user logins into the app.
+                               \item The user then locates the manage accounts button under Settings and clicks it.
+                               \item The user is brought to a screen displaying a list of their accounts.
+                               \item The user clicks onto the account they wish to modify.
+                               \item The user then clicks on what they want to edit and makes the necessary changes.
+                               \item The user then decides whether to click save changes or cancel.
+                               \item Whichever option is chosen, the user is brought back to the same account page where they can make more changes to the account’s information or click the return to home screen button.
+                             \end{enumerate} \\ \hline
+
+              Alternative Flows: & \nextitemblank 5a. In step 5 of the normal flow, the user doesn’t hit save or cancel after inputting new information. The phone shuts off or the app closes.
+                                   \begin{enumerate}
+                                     \item The new inputted information is not saved. The old information is kept.
+                                     \item The user gets back into the app and returns to the manage accounts section.
+                                     \item The user clicks onto the account they want to change
+                                     \item Use Case resumes on step 5
+                                   \end{enumerate} \\ \hline
+
+              Exceptions: & \nextitemblank In step 7 of the normal flow, the new password was evaluated but not accepted because it’s invalid due to requirements such as capitalized letters, numbers, and special characters.
+                            \begin{enumerate}
+                              \item The app keeps the old data and nothing is changed.
+                            \end{enumerate} \\ \hline
+
+              Includes: & The login to the app use case is included because the user must be logged in to the app to execute this use case. \\ \hline
+
+              Frequency of Use: & On-demand: Depends on when a user wants to update or change information. This use case may be used once a month or every couple of months. \\ \hline
+
+              Special Requirements: & \nextitem The app’s manage accounts section should be fairly easy to locate and use.
+                                      \nextitem Accounts should be organized and easily found. \\ \hline
+
+              Assumptions: & \nextitem The user understands English
+                             \nextitem The user is logged into the database
+                             \nextitem The user wishes to modify account information \\ \hline
+
+              Notes and Issues: & \nextitem Is there a limit to how often accounts can be modified within a time span? For example, how many times can you change one account within a week?\\ \hline
+
+\end{xltabular}}
+
 %TEMPLATE
 %\scriptsize{\begin{xltabular}{\textwidth}{|l|X|}
 %              \hline Use Case ID: & \\
