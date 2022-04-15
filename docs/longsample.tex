@@ -611,6 +611,85 @@ The project will span a 7 week timeline and will be made possible via the use of
 
 \end{xltabular}
 
+\scriptsize{\begin{xltabular}{\textwidth}{|l|X|}
+  \hline Use Case ID: & UC-4.6.22.2 \\ \hline
+
+  Use Case Name: & Check Database for an Account Breach\\ \hline
+
+  Created By: Rey Jairus Marasigan & Last Updated By: Rey Jairus Marasigan \\ \hline
+
+  Date Created: April 6, 2022 & Last Revision Date: April 6, 2022 \\ \hline
+
+  Actors: & \nextitem DeviceUser \nextitem HIBP (haveibeenpwned.com) \nextitem MobileDevice \\ \hline
+
+  Description: & This use case is used when the DeviceUser wants to check if their passwords are safe to be used periodically using the email associated with their accounts. The ideal outcome for the use case is that the DeviceUser is notified of one of two events, a breach or not a breach. \\ \hline
+
+  Trigger: & The event that initiates this use case could either be on demand of the DeviceUser through a specific button on the app or be from timely checks every so often passively. This use case will be focusing on the latter. \\ \hline
+
+  Preconditions: & \nextitem The device has an internet connection.
+                   \nextitem There is an established connection between HIBP with an API key set. (from agree to breach checks use case)
+                   \nextitem There is at least one entry(account) in the database with a recovery email associated.
+                   \nextitem The DeviceUser has checked the option to receive checks in the settings. \\ \hline
+
+  Postconditions: & \nextitem The DeviceUser is notified of either events of being compromised or being safe.
+                    \nextitem In the event of some accounts being compromised, the breach accounts are highlighted until they are modified within the app.
+                    \nextitem At minimum, the data in the database is not compromised to the third party password verifier. \\ \hline
+
+  Normal Flow: &
+                 \begin{enumerate}
+                   \item After pressing the switch to agree for periodic checks of their accounts, the DeviceUser closes the app and turns off the screen of their phone (not entirely where their phone is powered off).
+                   \item Depending on the amount of time they specified for the checks, the app sends the DeviceUser a notification on the status of their accounts every so often.
+                   \item During a check, the app passively sends a query to HIBP for all the accounts retrieved from the database through database queries.
+                   \item In the case of accounts being compromised, a notification appears on the MobileDevice that shows a red X symbol alongside with a message indicating which accounts may have been compromised.
+                   \item Upon pressing the notification, the app opens up to the log-in page that asks for the master password or other biometrics to get access into the list/database.
+                   \item After logging in, the device opens the app to the main/usual UI that shows the entire list of accounts  with certain entries highlighted in red indicating a possible breach.
+                   \item Pressing on one of the highlighted accounts brings up the usual editAccount use case. However,  it will display a banner on the top to indicate urgency to change the password of the email associated with the account.
+                   \item The DeviceUser selects all highlighted accounts and modifies them. The state of the app then reverts back to its usual state.
+                \end{enumerate} \\ \hline
+
+  Alternative Flows: &
+                       \nextitemblank 4a. In step 4 of the normal flow, if the accounts are not breached,
+                       \begin{enumerate}
+                         \item The notification shows a green check mark alongside a reassuring message.
+                         \item Pressing on it opens the app to a pop-up screen that shows a more specific description based on the aforementioned message.
+                         \item The screen has a button on the top right to close the pop-up message and reverts to the log-in screen to access the database.
+                       \end{enumerate}
+                       \nextitemblank  8a. In step 8 of the normal flow, if the customer does not change the highlighted accounts,
+                       \begin{enumerate}
+                         \item The state of the app will remain with the accounts still highlighted.
+                         \item The DeviceUser closes the app.
+                         \item The DeviceUser logins into the app later on, the state of the list will be the same as in step 6 after logging in.
+                       \end{enumerate} \\ \hline
+
+  Exceptions: &
+                3a. In step 3 of the normal flow, if the app is unable to reach HIBP,
+                \begin{enumerate}
+                  \item The app will go through the connect to HIBP use case.
+                  \item If successful the use case will continue back on step 3
+                \end{enumerate} \\ \hline
+
+  Includes: & \nextitemblank Edit Account: step 7 of the normal flow for the user to edit the account that needs to be modified.
+              \nextitemblank Logging into app: step 5 in the normal flow for the user to login into the app.
+              \nextitemblank Query HIBP: step 3 in the normal flow requires the specification of how the app interacts with HIBP.
+              \nextitemblank Agree to Breach Checks: a use case used for the preconditions.
+              \nextitemblank Connect to HIBP: a use case included within agree to breach checks use case.
+              \nextitemblank Lock App - step 8 in the normal flow where the DeviceUser is done modifying the account and exits. \\ \hline
+
+  Frequency of Use: & Depends on the frequency placed set by use case Agree to breach checks, can be from daily, weekly, biweekly, monthly, bimonthly, or yearly \\ \hline
+
+  Special Requirements: & \nextitem Users should not wait >20 seconds for an action to be performed
+                          \nextitem Animations should last <250ms
+                          \nextitem Colors should be made to be accessible to colorblind
+                          \nextitem Application should be made available on all major mobile platforms \\ \hline
+              Assumptions: &
+                             \nextitem The Customer has installed and is using the application
+                             \nextitem The application is readable to the Customer
+                             \nextitem The client has the ability to use the keyboard and interact with the screen. \\ \hline
+
+  Notes and Issues: & None \\ \hline
+
+\end{xltabular}
+
 \subsection{Use Case Diagrams}
 
 Backup Database
