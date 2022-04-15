@@ -1,12 +1,13 @@
 @startuml
-
 actor DeviceUser as a1
 
-rectangle App {
+rectangle app {
         usecase AddGroup as u1
-        usecase StoreAccount as u2
+        usecase EditGroupMetadata as u2
+        usecase EditDatabase as u3
 }
 
-a1 -- AddGroup
-a2 --> EditDatabase
+a1 --> u1
+u2 ..> u1 : <<include>>
+u1 --> u3
 @enduml

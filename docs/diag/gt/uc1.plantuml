@@ -1,5 +1,5 @@
 @startuml
-
+left to right direction
 actor DeviceUser as a1
 actor ExternalStorageDevice as a2
 
@@ -7,10 +7,14 @@ rectangle App {
         usecase CreateBackup as u1
         usecase SelectFile as u2
         usecase StoreFile as u3
+        usecase EncryptBackup as u4
+        usecase GetDatabase as u5
 }
 
 a1 -- u1
 u2 ..> u1
-u3 ..> u1
+u3 -- u1
 a2 -- u3
+u1 --> u5
+u4 ..> u1
 @enduml
