@@ -690,6 +690,88 @@ The project will span a 7 week timeline and will be made possible via the use of
 
 \end{xltabular}
 
+\scriptsize{\begin{xltabular}{\textwidth}{|l|X|}
+              \hline Use Case ID: & UC-4.6.22.3 \\ \hline
+
+              Use Case Name:  & Copy password to MobileDevice clipboard \\ \hline
+
+              Created By: Rey Jairus Marasigan & Last Updated By: Rey Jairus Marasigan \\ \hline
+
+              Date Created: April 6, 2022 & Last Revision Date: April 6, 2022 \\ \hline
+
+              Actors: & \nextitem DeviceUser \nextitem MobileDevice \\ \hline
+
+              Description: & This use case is used when the DeviceUser wants to copy one of the passwords within the list to their phone’s clipboard. The outcome of this use case is having the entry in the clipboard \\ \hline
+
+              Trigger: & The event that initiates this use case is from a simple press on the button next to the text field within the account’s screen that displays the website, account name, password, and email. \\ \hline
+
+             Preconditions: & \nextitem The DeviceUser is logged in on their personal device such as a cellphone where the app is located
+                              \nextitem The DeviceUser has the app opened
+                              \nextitem The DeviceUser has created a database
+                              \nextitem The DeviceUser has logged into a database
+                              \nextitem The screen displayed is on the account where the user wants to copy the account/password from. \\ \hline
+
+              Postconditions: & \nextitem The text for pasting is cleared from the clipboard or the desired text stays on the clipboard.
+                                \nextitem At minimum, the text copied from is unaltered or not deleted. \\ \hline
+
+              Normal Flow: &
+                             \begin{enumerate}
+                               \item While at the account screen, the DeviceUser sees a button next to each of the 4 text fields present. The button has a clipboard symbol.
+                               \item The DeviceUser presses the password clipboard button.
+                               \item The app then decrypts the password from its encrypted hash form.
+                               \item After decryption, the text is placed in the MobileDevice’s clipboard.
+                               \item The MobileDevice then clears the text from the clipboard through the clear clipboard automatically use case.
+                             \end{enumerate} \\ \hline
+
+              Alternative Flows: &
+                                   \nextitemblank 2a. In step 2 of the normal flow, if the user presses instead presses any the other clipboard buttons,
+                                   \begin{enumerate}
+                                     \item The text is directly copied into the clipboard without having to go through decryption.
+                                     \item The flow then continues in step 5 of the normal flow.
+                                   \end{enumerate}
+
+                                   \nextitemblank 5a. In step 5 of the normal flow, if the customer did not go through the clear clipboard automatically use case,
+                                   \begin{enumerate}
+                                     \item The text stays in the clipboard instead of being deleted.
+                                   \end{enumerate}
+
+                                   \nextitemblank 3a. In step 3 of the normal flow, if the app is unable decrypt the password,
+                                   \begin{enumerate}
+                                     \item An error will show on the screen in the form of a drop-down banner that will advise the DeviceUser to change the password.
+                                     \item The DeviceUser will then lead the use case to enter the editAccount use case.
+                                     \item After the editAccount use case, the flow will continue on step 2
+                                   \end{enumerate} \\ \hline
+
+              Exceptions: & 3a. In step 3 of the normal flow, if the app is unable decrypt the password,
+                            \begin{enumerate}
+                              \item An error will show on the screen in the form of a drop-down banner that will advise the DeviceUser to change the password.
+                              \item The DeviceUser will then lead the use case to enter the editAccount use case.
+                              \item After the editAccount use case, the flow will continue on step 2
+                            \end{enumerate} \\ \hline
+
+              Includes: & \nextitemblank Edit Account - step 3a of the exceptions for the user to edit the password.
+                          \nextitemblank Clear Clipboard Automatically- step 5 of the normal flow
+                          \nextitemblank Decrypt Password - step 3 of the normal flow \\ \hline
+
+
+              Frequency of Use: & On-demand \\ \hline
+
+              Special Requirements: & \nextitem Users should not wait >20 seconds for an action to be performed
+                                      \nextitem Application should be made available on all major mobile platforms
+                                      \nextitem App should have an interface to MobileDevice
+                                      \nextitem text copied into clipboard should not be modified \\ \hline
+
+
+              Assumptions: & \nextitem The DeviceUser is able to use the application without issue on their device(s).
+                             \nextitem The DeviceUser understands which button to choose to create an account group \\ \hline
+
+              Notes and Issues: & \nextitem Password could be cached within the clipboard undesirably
+                                  \nextitem How long will the clipboard hold on to the copied text?
+                                  \nextitem Where should the button be placed when faced with varying screen sizes? \\ \hline
+
+\end{xltabular}
+
+
 \subsection{Use Case Diagrams}
 
 Backup Database
