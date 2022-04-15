@@ -22,6 +22,10 @@ class ListAcctView {
 
     }
 
+    public void pressAddGroupButton(){
+
+    }
+
     public void jumpToLetter(){
 
     }

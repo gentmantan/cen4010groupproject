@@ -1,0 +1,17 @@
+@startuml
+skinparam sequenceParticipant underline
+actor ":DeviceUser" as a1
+boundary ":ListAcctView" as b1
+entity ":Database" as e1
+entity "root:Directory" as e2
+
+activate a1
+activate b1
+                a1 -> b1 : pressAddGroupButton()
+                b1 -> e1 : getRoot()
+                activate e1
+                e1 -> e2 : addDirectory()
+                activate e2
+                deactivate e1
+                deactivate e2
+@enduml

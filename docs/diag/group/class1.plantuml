@@ -7,12 +7,14 @@ class App {
   -pass: String
   -ui: UI
   +newApp(): void
+  +initUI(): void
   +storeEncryptedFilePass(pass: String): void
   +getDongle(): BluetoothIO
   +getPass(): String
   +generatePass(): String
   +selectAcccount(): Account
   +viewAccount(acct: Account): void
+  +viewAccountList(db: Database): void
   +editAccount(acct: Account): Account
 }
 
@@ -88,6 +90,7 @@ class BluetoothIO {
       +showEntry(): void
       +enterEntry(): Account
       +inputAcct(): void
+      +pressAddGroupButton(): void
       +jumpToLetter(): void
     }
 

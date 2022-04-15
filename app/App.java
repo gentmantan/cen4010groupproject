@@ -20,6 +20,10 @@ public class App
         this.db = db;
     }
 
+    public void openUI(){
+
+    }
+
     public void storeEncryptedFilePass(String pass){
         //store a hashed version of the input password
     }
@@ -42,6 +46,10 @@ public class App
 
     public void viewAccount(Account acct){
         ui.drawReadAcctView(acct);
+    }
+
+    public void viewAccountList(Database db){
+
     }
 
     public Account editAccount(Account acct){
