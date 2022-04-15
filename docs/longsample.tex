@@ -29,7 +29,9 @@
 %% 
 %% Notes on the paper
 %% My specific issue: ethical issues regarding the exploitation of mineral mining for the use of electronics production
-\documentclass[stu]{apa7}
+\documentclass[12pt, titlepage]{article}
+
+\usepackage[letterpaper, margin=0.75in]{geometry}
 
 \usepackage{lipsum}
 
@@ -40,8 +42,11 @@
 
 %\usepackage{multirow}
 
+\usepackage{graphicx}
+
 \usepackage{tabularx}
 \usepackage{xltabular}
+\usepackage{longtable}
 
 \usepackage{enumitem}
 
@@ -81,20 +86,20 @@ Out of scope: Application data security, side-channel attacks
 
 \subsection{Objectives and success criteria of the project}
 
-\begin{APAitemize}
+\begin{itemize}
   \item Provide a mobile app for users to create and store passwords
   \item Provide a USB hardware dongle that can be paired with the mobile app which can type in passwords in lieu of keyboard input
-\end{APAitemize}
+\end{itemize}
 
 \subsection{Definitions, acronyms, and abbreviations}
 
-\begin{APAitemize}
+\begin{itemize}
   \item PassUSB: the project's USB dongle solution that emulates a USB keyboard
   \item Password manager: a computer program that generates, stores and retrieves passswords for its users
   \item HID (Human Interface Device): a computer device that facilitates communications between a computer user and a computer 
   \item App: a computer application
   \item Pairing: the process of recognition and acknowledgement between the mobile device and USB dongle
-\end{APAitemize}
+\end{itemize}
 
 \subsection{Overview of document}
 The project will consist of two types of coding assignments, one for frontend development i.e. mobile app development, and the other for backend development i.e. microcontroller programming. The mobile app will prompt the user to create a new password database, in which he/she will then enter a master password that is to be used to secure the database. The user will be given an option to pair the PassUSB with the app. Should the user choose to or not choose to pair the PassUSB, the user is then able to utilize the app's password generation, management and storage features.
@@ -143,7 +148,7 @@ The project will span a 7 week timeline and will be made possible via the use of
 
 \subsection{Use Cases}
 
-\scriptsize{\begin{xltabular}{\textwidth}{|l|X|}
+\small{\begin{xltabular}{\textwidth}{|l|X|}
   \hline Use Case ID: & UC-1-AA \\ \hline
 
   Use Case Name: & Add account \\ \hline
@@ -228,7 +233,7 @@ The project will span a 7 week timeline and will be made possible via the use of
 
 \pagebreak
 
-\scriptsize{\begin{xltabular}{\textwidth}{|l|X|}
+\small{\begin{xltabular}{\textwidth}{|l|X|}
   \hline Use Case ID: & UC-2-AB \\ \hline
 
   Use Case Name: & Login to Database \\ \hline
@@ -296,7 +301,7 @@ The project will span a 7 week timeline and will be made possible via the use of
 
 \pagebreak
 
-\scriptsize{\begin{xltabular}{\textwidth}{|l|X|}
+\small{\begin{xltabular}{\textwidth}{|l|X|}
   \hline Use Case ID: & UC-232-AB \\ \hline
 
   Use Case Name: & Pair Dongle \\ \hline
@@ -355,7 +360,7 @@ The project will span a 7 week timeline and will be made possible via the use of
 
 \pagebreak
 
-\scriptsize{\begin{xltabular}{\textwidth}{|l|X|}
+\small{\begin{xltabular}{\textwidth}{|l|X|}
   \hline Use Case ID: & UC-3-AC \\ \hline
 
   Use Case Name: & Generate Password \\ \hline
@@ -423,7 +428,7 @@ The project will span a 7 week timeline and will be made possible via the use of
 
 \pagebreak
 
-\scriptsize{\begin{xltabular}{\textwidth}{|l|X|}
+\small{\begin{xltabular}{\textwidth}{|l|X|}
   \hline Use Case ID: & UC-5-AC \\ \hline
 
   Use Case Name: & Delete Account \\ \hline
@@ -501,7 +506,7 @@ The project will span a 7 week timeline and will be made possible via the use of
 
 % BEGIN PART 2
 
-\scriptsize{\begin{xltabular}{\textwidth}{|l|X|}
+\small{\begin{xltabular}{\textwidth}{|l|X|}
   \hline Use Case ID: & UC-6-AC \\ \hline
 
   Use Case Name: & Backup Database \\ \hline
@@ -564,7 +569,7 @@ The project will span a 7 week timeline and will be made possible via the use of
 
 \end{xltabular}}
 
-\scriptsize{\begin{xltabular}{\textwidth}{|l|X|}
+\small{\begin{xltabular}{\textwidth}{|l|X|}
   \hline Use Case ID: & UC-6-AC \\ \hline
 
   Use Case Name: & Create Account Entry Group \\ \hline
@@ -613,7 +618,7 @@ The project will span a 7 week timeline and will be made possible via the use of
 
 \end{xltabular}}
 
-\scriptsize{\begin{xltabular}{\textwidth}{|l|X|}
+\small{\begin{xltabular}{\textwidth}{|l|X|}
   \hline Use Case ID: & UC-4.6.22.2 \\ \hline
 
   Use Case Name: & Check Database for Account Data Compromise \\ \hline
@@ -692,7 +697,7 @@ The project will span a 7 week timeline and will be made possible via the use of
 
 \end{xltabular}}
 
-\scriptsize{\begin{xltabular}{\textwidth}{|l|X|}
+\small{\begin{xltabular}{\textwidth}{|l|X|}
               \hline Use Case ID: & UC-4.6.22.3 \\ \hline
 
               Use Case Name:  & Copy password to MobileDevice clipboard \\ \hline
@@ -773,7 +778,7 @@ The project will span a 7 week timeline and will be made possible via the use of
 
 \end{xltabular}}
 
-\scriptsize{\begin{xltabular}{\textwidth}{|l|X|}
+\small{\begin{xltabular}{\textwidth}{|l|X|}
               \hline Use Case ID: UC-2-BC & \\ \hline
 
               Use Case Name: Modifying Account Details & \\ \hline
