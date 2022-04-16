@@ -1,0 +1,21 @@
+@startuml
+
+object "<u>:ListAcctView" as o1
+
+object "<u>myDatabase:Database" as o2
+o2 : dbpass = "hunter2"
+
+
+object "<u>root:Directory" as o3
+o3 : name = "root"
+
+
+object "<u>emails:Directory" as o4
+o4 : name = "Emails"
+
+
+o1 "user \n interface" -- o2 : has reference to
+o2 "owner" -- o3 : stores
+o3 "parent" -- o4 : owns
+
+@enduml
