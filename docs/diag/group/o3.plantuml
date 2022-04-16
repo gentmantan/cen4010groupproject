@@ -1,17 +1,28 @@
 @startuml
+package MobileAppSubsystem <<rectangle>> {
+        object "<u>:App" as o1
+        object "<u>myDongle:BluetoothIO" as o2
+        object "<u>:ReadAcctView" as o3
+}
 
-object "<u>:App" as o1
-object "<u>myDongle:BluetoothIO" as o2
-object "<u>:ReadAcctView" as o3
+package DongleSubsystem <<rectangle>> {
+        object "<u>:DongleBluetoothIO" as o4
+}
 
 o2 : privateKey = "NNUWC3TPN5ZWQCQ="
-o2 : publicKey = "OJXWG23TBI======"
+o2 : selfPublicKey = "OJXWG23TBI======"
+o2 : otherPublicKey = "bG9sb2xvbG9sb2w="
 o2 : dongleAddress = "0123456789AB"
 
 o3 : acct = array(["username", "foo@bar.com"], ...)
 
+o4 : privateKey = "Zm9vYmFy"
+o4 : selfPublicKey = "bG9sb2xvbG9sb2w="
+o4 : otherPublicKey = "OJXWG23TBI======"
+
 o1 "owner" -- o2 : owns
 o3 "sender" -- o2 : sends string to inject to
+o2 "sender" -right- o4 : sends string to inject to
 'o1 "user \n interface" -- o2 : has reference to
 'o2 "owner" -- o3 : stores
 'o3 "parent" -- o4 : owns

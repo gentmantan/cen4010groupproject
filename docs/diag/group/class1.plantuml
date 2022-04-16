@@ -1,49 +1,50 @@
 @startuml
 skinparam groupInheritance 2
 
-class App {
-  -io: BluetoothIO
-  -db: Database
-  -pass: String
-  -ui: UI
-  +newApp(): void
-  +initUI(): void
-  +storeEncryptedFilePass(pass: String): void
-  +getDongle(): BluetoothIO
-  +getPass(): String
-  +generatePass(): String
-  +selectAcccount(): Account
-  +viewAccount(acct: Account): void
-  +viewAccountList(db: Database): void
-  +editAccount(acct: Account): Account
-}
+package MobileAppSubsystem <<Rectangle>> {
+  class App {
+    -io: BluetoothIO
+    -db: Database
+    -pass: String
+    -ui: UI
+    +newApp(): void
+    +initUI(): void
+    +storeEncryptedFilePass(pass: String): void
+    +getDongle(): BluetoothIO
+    +getPass(): String
+    +generatePass(): String
+    +selectAcccount(): Account
+    +viewAccount(acct: Account): void
+    +viewAccountList(db: Database): void
+    +editAccount(acct: Account): Account
+  }
 
-class BluetoothIO {
-  -privateKey: String
-  -publicKey: String
-  -dongleAddress: String
-  +searchDongle(): ArrayList<String>
-  +selectDongle(addr: String): void
-  +keyboardInput(input: String): void
-  +pairDongle(addr: String): void
-}
+  class BluetoothIO {
+    -privateKey: String
+    -publicKey: String
+    -dongleAddress: String
+    +searchDongle(): ArrayList<String>
+    +selectDongle(addr: String): void
+    +keyboardInput(input: String): void
+    +pairDongle(addr: String): void
+  }
 
 'class EncryptedFile {
 ''  -Database db
 ''  +EncryptedFile(){
 ''  }
 ''}
-    class Directory {
-      -name: String
-      -entries: List<Account>
-      -directories: List<Directory>
-      +getAccountListNames(): List<Account>
-      +getAccount(index: int): Account
-      +addAccount(input: Account): void
-      +addDirectory(input: Directory): void
-      +getName(): String
-      +setName(input: String): void
-    }
+  class Directory {
+    -name: String
+    -entries: List<Account>
+    -directories: List<Directory>
+    +getAccountListNames(): List<Account>
+    +getAccount(index: int): Account
+    +addAccount(input: Account): void
+    +addDirectory(input: Directory): void
+    +getName(): String
+    +setName(input: String): void
+  }
 
     class Database{
       -root: Directory
@@ -152,9 +153,45 @@ class BluetoothIO {
       +sendUserName(): void
       +sendPassword(): void
       +sendUrl(): void
+      }
     }
 
-App "1" -- "1" BluetoothIO
+    package DongleSubsystem <<Rectangle>> {
+      class Main{
+        -io: BluetoothIO
+        -disp: Display
+        -button: Button
+        startRoutine(): void
+      }
+      class DongleBluetoothIO {
+        -privateKey: String
+        -publicKey: String
+        -buffer: String
+        +setBuffer(input: String): void
+        +pairDevice(addr: String): void
+        +resetKeys():void
+      }
+
+      class EmulateKeyboard {
+        +inputText(String input): void
+      }
+
+      class Display {
+        -displayText: String
+        +printText(input:String): void
+      }
+
+      class Button {
+        +pressReset(): void
+      }
+    }
+
+    Main "1" -- "1" DongleBluetoothIO
+    Main "1" -- "1" EmulateKeyboard
+    Main "1" -- "1" Display
+    Main "1" -- "1" Button
+    BluetoothIO "1" -right- "1" DongleBluetoothIO : transmits/receives info
+App "1" -right- "1" BluetoothIO
 
 'App "1" -- "1" EncryptedFile
 'EncryptedFile "1" *-- "1" Database
@@ -165,7 +202,7 @@ Directory "1" *-- "*" Account
 App "1" -- "1" UI
 UI *--  AcctView
 
-note right of Directory
+note left of Directory
   context Directory
   inv : self.Account password !=NULL
 
