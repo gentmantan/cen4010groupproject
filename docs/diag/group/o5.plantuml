@@ -1,0 +1,37 @@
+@startuml
+package MobileAppSubsystem <<rectangle>> {
+        object "<u>socialmedia:Directory" as o2
+        object "<u>twitter:Account" as o3
+        object "<u>discord:Account" as o4
+        object "<u>reddit:Account" as o5
+        object "<u>youtube:Account" as o6
+}
+
+o2 : name = "Social Media Logins"
+
+o3 : website = "twitter.com"
+o3 : username = "lorem"
+o3 : password = "9823hnfhu49v"
+
+o4 : website = "discord.com"
+o4 : username = "ipsum"
+o4 : password = "ewahfo4iofj"
+
+o5 : website = "reddit.com"
+o5 : username = "dolor"
+o5 : password = "fjaioup49h"
+
+o6 : website = "youtube.com"
+o6 : username = "sit"
+o6 : password = "fpaowiehf4"
+
+o2 -up- o3 : > owns
+o2 -down- o4 : > owns
+o2 -left- o5 : > owns
+o2 -right- o6 : > owns
+
+'o1 "user \n interface" -- o2 : has reference to
+'o2 "owner" -- o3 : stores
+'o3 "parent" -- o4 : owns
+
+@enduml

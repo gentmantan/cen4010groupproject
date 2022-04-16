@@ -113,7 +113,8 @@ package MobileAppSubsystem <<Rectangle>> {
     }
 
     class DBLoginView{
-      +inputPass(): String
+        +inputPass(): String
+        +hashPass(): String
     }
 
     class ReadAcctView{
