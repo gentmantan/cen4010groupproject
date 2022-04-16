@@ -19,6 +19,9 @@ class App {
 }
 
 class BluetoothIO {
+  -privateKey: String
+  -publicKey: String
+  -dongleAddress: String
   +searchDongle(): ArrayList<String>
   +selectDongle(addr: String): void
   +keyboardInput(input: String): void
@@ -120,6 +123,10 @@ class BluetoothIO {
       +printUrl(): void
       +printExpires(): void
       +printNotes(): void
+      +sendAccountName(): void
+      +sendUserName(): void
+      +sendPassword(): void
+      +sendUrl(): void
       +pressPasswordCopyButton(): void
       +pressAccountCopyButton(): void
       +pressEmailCopyButton(): void
@@ -141,6 +148,10 @@ class BluetoothIO {
       +inputExpires(): void
       +printNotes(): void
       +inputNotes(String notes): void
+      +sendAccountName(): void
+      +sendUserName(): void
+      +sendPassword(): void
+      +sendUrl(): void
     }
 
 App "1" -- "1" BluetoothIO
